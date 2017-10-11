@@ -2,6 +2,8 @@ package by.it.mustaphin.jd01_08;
 
 public abstract class AdultOnly extends Movie implements Productable {
 
+    public final int AGE_RESTRICTION = 18;
+
     public AdultOnly() {
         imdb = 0.0;
         desc = "";
@@ -13,7 +15,7 @@ public abstract class AdultOnly extends Movie implements Productable {
     }
 
     @Override
-    public String[] invatedActors() {
+    public String[] invitedActors() {
         return null;
     }
 
@@ -23,7 +25,7 @@ public abstract class AdultOnly extends Movie implements Productable {
     }
 
     @Override
-    public int honorarsTotal() {
+    public int honoraryTotal() {
         return 0;
     }
 
@@ -35,11 +37,6 @@ public abstract class AdultOnly extends Movie implements Productable {
     @Override
     public String getRights() {
         return "copy rights reserved";
-    }
-
-    @Override
-    public int ageLimit() {
-        return 18;
     }
 
     @Override

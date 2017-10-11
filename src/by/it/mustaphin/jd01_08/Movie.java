@@ -14,6 +14,6 @@ public abstract class Movie implements Productable {
 
     @Override
     public String toString() {
-        return String.format("Название: %-12s, год: %-4d, рейтинг: %-2.2g, продолжительность: %-3d минут", name, year, imdb, duration);
+        return String.format("Название: %s\nгод: %-4d\nрейтинг: %-2.2g\nпродолжительность: %-3d минут\n", name, year, imdb, duration);
     }
 }

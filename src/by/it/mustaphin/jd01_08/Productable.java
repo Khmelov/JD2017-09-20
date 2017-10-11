@@ -4,16 +4,16 @@ public interface Productable {
 
     int calcBudget();//dollars
 
-    String[] invatedActors();
+    String[] invitedActors();
 
     int timeWork();//days
 
-    int honorarsTotal();//dollars
+    int honoraryTotal();//dollars
 
     String country();
 
     String getRights();
 
-    int ageLimit();
+    String director();
 
 }
