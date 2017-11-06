@@ -5,6 +5,6 @@ public interface IBuyer {
 
 
     void enterToMarket();
-    void chooseGoods(); //от 0,5 до 2 секунд
+    String chooseGoods(); //от 0,5 до 2 секунд
     void goToOut();
 }
