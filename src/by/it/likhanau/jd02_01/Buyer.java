@@ -5,16 +5,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Buyer implements IBuyer, IUseBucket, Runnable {
+    private boolean pensioner;
     private int number;
+
     List<Double> basket = new ArrayList<>();
 
-    public Buyer(int number) {
+    public Buyer(int number, boolean pensioner) {
         this.number = number;
+        this.pensioner = pensioner;
     }
 
     @Override
     public String toString() {
-        return "Buyer # " + number;
+        return "Buyer # " + this.number + (this.pensioner ? " (пенсионер)" : "");
     }
 
     @Override
@@ -25,7 +28,11 @@ class Buyer implements IBuyer, IUseBucket, Runnable {
     @Override
     public String chooseGoods() {
         System.out.println(this + " is choosing goods.");
-        Util.makeThreadSleep(Util.generateRandomNumber(500, 2_000));
+        int pause = Util.generateRandomNumber(500, 2_000);
+        if (pensioner) {
+            pause *= 1.5;
+        }
+        Util.makeThreadSleep(pause);
         return Goods.getRandomGood();
     }
 
@@ -46,8 +53,12 @@ class Buyer implements IBuyer, IUseBucket, Runnable {
 
     @Override
     public void takeBucket() {
-        Util.makeThreadSleep(Util.generateRandomNumber(100, 200));
         System.out.println(this + " has taken a basket.");
+        int pause = Util.generateRandomNumber(100, 200);
+        if (pensioner) {
+            pause *= 1.5;
+        }
+        Util.makeThreadSleep(pause);
     }
 
     @Override
@@ -56,7 +67,11 @@ class Buyer implements IBuyer, IUseBucket, Runnable {
             String keyGoods = chooseGoods();
             this.basket.add(Goods.goods.get(keyGoods));
             System.out.println(this + " has added " + keyGoods + ". The price is " + Goods.goods.get(keyGoods) + " .");
-            Util.makeThreadSleep(Util.generateRandomNumber(100, 200));
+            int pause = Util.generateRandomNumber(100, 200);
+            if (pensioner) {
+                pause *= 1.5;
+            }
+            Util.makeThreadSleep(pause);
         }
     }
 }
