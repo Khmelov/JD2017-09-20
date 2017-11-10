@@ -6,6 +6,7 @@ public class Runner {
 //        tA.makeMatrix();
 
         TaskB tB = new TaskB();
-        tB.read();
+        tB.readSrc();
+        tB.writeToFile();
     }
 }

@@ -1,35 +1,41 @@
 package by.it.mustaphin.calc;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class StoreData {
 
-    Properties property = new Properties();
+    static HashMap<String, Var> data = new HashMap<>();
+    static Properties property = new Properties();
 
-    public StoreData() {
+    static {
         try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/by/it/mustaphin/calc/vars.txt")) {
             property.load(fis);
-        } catch (FileNotFoundException e) {
+            Enumeration en = property.propertyNames();
+            while (en.hasMoreElements()) {
+                String key = (String) en.nextElement();
+                data.put(key, Var.getVar((String) property.get(key)));
+            }
+        } catch (FileNotFoundException | ClassCastException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    static private HashMap<String, Var> data = new HashMap<>();
-
-    void getData() {
-        Set<String> vars = property.stringPropertyNames();
-        for (String parameter : vars) {
-            data.put(parameter, new Var().getVar(property.getProperty(parameter)));
+    static void writeData() {
+        try (FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "/src/by/it/mustaphin/calc/vars.txt")) {
+            Map<String, String> dataValueToStr = new HashMap<>();
+            for (Map.Entry<String, Var> me : data.entrySet()) {
+                dataValueToStr.put(me.getKey(), me.getValue().toString());
+            }
+            property.putAll(dataValueToStr);
+            property.store(fos, null);
+        } catch (FileNotFoundException | ClassCastException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    }
-
-    static void store(String name, Var var) {
-        data.put(name, var);
     }
 
     static void sortvar() {
