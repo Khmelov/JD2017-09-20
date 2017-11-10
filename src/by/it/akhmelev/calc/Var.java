@@ -12,7 +12,7 @@ abstract class Var implements IOperation{
     }
 
     static Var getVar(String name){
-        return mapvar.get(name);
+        return mapvar.containsKey(name)?mapvar.get(name):null;
     }
 
     @Override

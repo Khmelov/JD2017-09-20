@@ -6,7 +6,7 @@ interface Patterns {
     String exVec="\\{((-?([0-9.])+),?)+}";                //вектора
     String exMat="\\{((\\{((-?([0-9.])+),?)+}),?)+}";     //матрицы
     String exAny="("+exMat+")|("+exVec+")|("+exVal+")";   //одно из...
-    String exOper="[-+*/=]";                               //операция
+    String exOper="(?<=[^+-/*=,{])[-+*/=]";               //операция
     String exFull= "("+exAny+")"+
                    "(" +exOper+")"+
                    "(" +exAny +")"; //выражение целиком
