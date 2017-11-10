@@ -1,9 +1,11 @@
 package by.it.akhmelev.jd02_04.calc_classwork_v2;
 
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class ParserTest {
-    @org.junit.Test
+    @Test
     public void calc() throws Exception {
         Parser parser=new Parser();
         String expression="A=2+6/3";
@@ -12,7 +14,7 @@ public class ParserTest {
         assertTrue(res.equals(control));
     }
 
-    @org.junit.Test
+    @Test
     public void vector() throws Exception {
         Parser parser=new Parser();
         String expression="A={1,2}+{3,4}";
