@@ -18,6 +18,9 @@ public class RunnerA {
         // count buyers from 5 to 25
         countBuyers = (int)(Math.random()*25 + 5);
 
+        for(int i = 0; i < countBuyers; i++)
+            buyer.add(new Buyer());
+
         System.out.println(countBuyers);
         for (int i = 0; i < 5; i++)
             new Cashier(i);
