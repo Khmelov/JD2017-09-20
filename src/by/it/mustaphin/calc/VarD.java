@@ -1,10 +1,5 @@
 package by.it.mustaphin.calc;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-
 public class VarD extends Var {
 
     private double value = 0;

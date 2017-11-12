@@ -1,1 +1,3 @@
-#Wed Nov 01 19:41:35 MSK 2017
+#Sun Nov 12 13:34:01 MSK 2017
+asdh=0.8
+afgh=-11.0

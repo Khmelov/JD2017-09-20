@@ -1,63 +1,26 @@
 package by.it.mustaphin.calc;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Parser {
 
-    void read() {
-        System.out.println("Напишите выражение или введите команду \"sortvar\" для отображения всех результатов или команду \"printvar\" или введите команду \"exit\" для выхода");
-        Scanner scan = new Scanner(System.in);
-        String line = scan.nextLine().trim();
-        if (line.equalsIgnoreCase("sortvar")) {
-            StoreData.sortvar();
-            read();
-        } else if (line.equalsIgnoreCase("exit")) {
-            StoreData.writeData();
-            System.exit(0);
-        } else if (line.equalsIgnoreCase("printvar")) {
-            StoreData.printvar();
-            read();
-        } else {
-            parseExpression(line);
-            read();
-        }
-    }
-
-    void read(String line) {
-        if (line.equalsIgnoreCase("sortvar")) {
-            StoreData.sortvar();
-            read();
-        } else if (line.equalsIgnoreCase("exit")) {
-            StoreData.writeData();
-            System.exit(0);
-        } else if (line.equalsIgnoreCase("printvar")) {
-            StoreData.printvar();
-            read();
-        } else {
-            parseExpression(line);
-            read();
-        }
-    }
-
     void parseExpression(String line) {
-        try (FileWriter out = new FileWriter(new File(System.getProperty("user.dir") + "/src/by/it/mustaphin/calc/log.txt"), true)) {
-            out.write(line + "\n");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Pattern action = Pattern.compile("[-+*/]");
+        StoreData.storeToProp(line);
+
+        Pattern action = Pattern.compile("[-+*/=]");
         Pattern varsD = Pattern.compile("[^-{},*+/=][0-9.]+|[0-9.]+");
         Pattern varsV = Pattern.compile("[{][0-9.,]+[}]");
-        Pattern varName = Pattern.compile("[a-zA-Z]+");
+        Pattern varNewName = Pattern.compile("^[a-zA-Z]+");
+        Pattern varUsedName = Pattern.compile(action + "[a-zA-Z]+");
+
+        Matcher matUsedName = varUsedName.matcher(line);
         Matcher matD = varsD.matcher(line);
         Matcher matV = varsV.matcher(line);
+        Matcher matA = action.matcher(line);
+        Matcher matN = varNewName.matcher(line);
+
         List<Var> varList = new ArrayList<>();
         while (matV.find()) {
             varList.add(new VarV(matV.group()));
@@ -65,9 +28,18 @@ public class Parser {
         while (matD.find()) {
             varList.add(new VarD(matD.group()));
         }
-        Matcher matA = action.matcher(line);
-        Matcher matN = varName.matcher(line);
+        while (matUsedName.find()) {
+            double var = Double.parseDouble((String) StoreData.property.get(matUsedName.group()));
+            varList.add(new VarD(var));
+        }
+
+        List<String> actions = new ArrayList<>();
+        while (matA.find()) {
+            actions.add(matA.group());
+        }
+
         while (matA.find() & matN.find()) {
+            System.out.println(matA.find());
             if (matA.group().equals("+")) {
                 StoreData.data.put(matN.group(), add(varList.get(0), varList.get(1)));
             }
@@ -81,6 +53,7 @@ public class Parser {
                 StoreData.data.put(matN.group(), div(varList.get(0), varList.get(1)));
             }
         }
+        StoreData.writeData();
         varList.clear();
     }
 
@@ -100,4 +73,38 @@ public class Parser {
         return var1.div(var2);
     }
 
+    void read() {
+        System.out.println("Напишите выражение или введите команду \"sortvar\" для отображения всех результатов или команду \"printvar\" или введите команду \"exit\" для выхода");
+        Scanner scan = new Scanner(System.in);
+        String line = scan.nextLine().trim();
+        if (line.equalsIgnoreCase("sortvar")) {
+//            StoreData.sortvar();
+            read();
+        } else if (line.equalsIgnoreCase("exit")) {
+            StoreData.writeData();
+            System.exit(0);
+        } else if (line.equalsIgnoreCase("printvar")) {
+            StoreData.printvar();
+            read();
+        } else {
+            parseExpression(line);
+            read();
+        }
+    }
+
+    void read(String line) {
+        if (line.equalsIgnoreCase("sortvar")) {
+            StoreData.sortvar();
+            read();
+        } else if (line.equalsIgnoreCase("exit")) {
+//            StoreData.writeData();
+            System.exit(0);
+        } else if (line.equalsIgnoreCase("printvar")) {
+            StoreData.printvar();
+            read();
+        } else {
+            parseExpression(line);
+            read();
+        }
+    }
 }
