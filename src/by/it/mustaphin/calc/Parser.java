@@ -6,31 +6,38 @@ import java.util.regex.Pattern;
 
 public class Parser {
 
+    Pattern varsD = Pattern.compile(Patterns.exVal);
+    Pattern varsV = Pattern.compile(Patterns.exVec);
+    Pattern operation = Pattern.compile(Patterns.exOper);
+    Pattern varNewName = Pattern.compile(Patterns.newName);
+    Pattern varUsedName = Pattern.compile(Patterns.usedName);
+    Pattern anyVar = Pattern.compile(Patterns.exAny);
+    Pattern usedOrAny = Pattern.compile(Patterns.anyOrUsed);
+
     void parseExpression(String line) {
         StoreData.storeToProp(line);
+        String[] max = new String[]{"*", "/"};
+        String[] med = new String[]{"+", "-"};
+        String[] min = new String[]{"="};
+        List<String[]> priority = new ArrayList<>();
+        priority.add(min);
+        priority.add(med);
+        priority.add(max);
 
-        Pattern action = Pattern.compile("[-+*/=]");
-        Pattern varsD = Pattern.compile("[^-{},*+/=][0-9.]+|[0-9.]+");
-        Pattern varsV = Pattern.compile("[{][0-9.,]+[}]");
-        Pattern varNewName = Pattern.compile("^[a-zA-Z]+");
-        Pattern varUsedName = Pattern.compile(action + "[a-zA-Z]+");
-
-        Matcher matUsedName = varUsedName.matcher(line);
-        Matcher matD = varsD.matcher(line);
-        Matcher matV = varsV.matcher(line);
-        Matcher matA = action.matcher(line);
+        Matcher matA = operation.matcher(line);
         Matcher matN = varNewName.matcher(line);
+        Matcher uoa = usedOrAny.matcher(line);
 
         List<Var> varList = new ArrayList<>();
-        while (matV.find()) {
-            varList.add(new VarV(matV.group()));
-        }
-        while (matD.find()) {
-            varList.add(new VarD(matD.group()));
-        }
-        while (matUsedName.find()) {
-            double var = Double.parseDouble((String) StoreData.property.get(matUsedName.group()));
-            varList.add(new VarD(var));
+        while (uoa.find()) {
+            Matcher usedName = varUsedName.matcher(uoa.group());
+            Matcher anyV = anyVar.matcher(uoa.group());
+            if (usedName.find()) {
+                varList.add(getVar((String) StoreData.property.get(usedName.group())));
+            }
+            if (anyV.find()) {
+                varList.add(getVar(anyV.group()));
+            }
         }
 
         List<String> actions = new ArrayList<>();
@@ -55,6 +62,19 @@ public class Parser {
         }
         StoreData.writeData();
         varList.clear();
+    }
+
+    boolean checkVarType(String value, Pattern pat) {
+        return pat.matcher(value).matches();
+    }
+
+    Var getVar(String value) {
+        if (checkVarType(value, varsD)) {
+            return new VarD(value);
+        } else if (checkVarType(value, varsV)) {
+            return new VarV(value);
+        }
+        return Var.getVar(value);
     }
 
     <T extends Var> Var add(T var1, T var2) {

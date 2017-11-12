@@ -10,5 +10,7 @@ interface Patterns {
     String exFull = "(" + exAny + ")" +
             "(" + exOper + ")" +
             "(" + exAny + ")"; //выражение целиком
-
+    String newName = "^[A-Z]+[0-1]?";
+    String usedName = "(?<=.)([A-Z])";
+    String anyOrUsed = "(" + usedName + ")|(" + exAny + ")";
 }

@@ -11,7 +11,9 @@ public class ConsoleRunner {
 
 //        new Parser().read(args[0]);
         Parser parser = new Parser();
-        parser.parseExpression("asdh=44/55");
-        parser.parseExpression("afgh=44-55");
+        parser.parseExpression("A=44/55");
+        parser.parseExpression("B=44-55");
+        parser.parseExpression("C=44/55");
+        parser.parseExpression("D=44*55");
     }
 }
