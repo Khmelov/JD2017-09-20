@@ -116,8 +116,8 @@ class OperationCore {
         VarM res = null;
         try{
             if(v2.getValue() != 0) {
-                VarM result = new VarM(v1.getValue());
-                double[][] resultVal = result.getValue();
+                res = new VarM(v1.getValue());
+                double[][] resultVal = res.getValue();
                 double operand2 = v2.getValue();
                 for (int i = 0; i < resultVal.length; i++) {
                     for (int j = 0; j < resultVal[i].length; j++) {

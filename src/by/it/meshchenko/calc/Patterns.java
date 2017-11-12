@@ -8,11 +8,14 @@ interface Patterns {
     String exVec = "\\{((-?([0-9.])+),?)+}";                //вектора
     String exMat = "\\{((\\{((-?([0-9.])+),?)+}),?)+}";     //матрицы
     String exAny = "("+exMat+")|("+exVec+")|("+exVal+")";   //одно из...
-    String exOper = "[-+*/]";                               //операция
+    String exOper = "(?<![-\\{,\\(]|^)[-+*/]";                               //операция
     String exFull = "("+exAny+")"+
             "(" +exOper+")"+
-            "(" +exAny +")"; //выражение целиком
+            "(" +exAny +")";                                //выражение целиком
     String exAssign = "=";
-    String nameVar = "((_?)([A-Za-z]{1})([A-Za-z0-9_]+)?)";
+    String nameVar = "((_?)([A-Za-z]{1})([A-Za-z0-9_]+)?)"; // Название переменной
+    String exAnyANDnameVar = "("+exAny+")|("+nameVar+")";
     String exAssignNameVarValue = "("+ nameVar +")"+"(" +exAssign+")"+"(" +exAny +")";
+    String exPriorOp1= "(^|(?<=[+-/*]))("+ exAnyANDnameVar +")[*/]("+ exAnyANDnameVar +")(?=[+-/*]|$)";
+    String exPriorOp2= "(^|(?<=[+-/*]))("+ exAnyANDnameVar +")[+-]("+ exAnyANDnameVar +")(?=[+-/*]|$)";
 }

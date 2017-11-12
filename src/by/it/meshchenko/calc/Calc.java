@@ -67,9 +67,9 @@ public class Calc {
                     }
                     else{}
                 }
-                else {
-                    res = res.add(temp.getValue());
-                }
+//                else {
+//                    res = res.add(temp.getValue());
+//                }
             }
             i++;
         }

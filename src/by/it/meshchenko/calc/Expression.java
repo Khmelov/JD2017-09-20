@@ -1,23 +1,30 @@
 package by.it.meshchenko.calc;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Stack;
+import java.util.*;
 
 public class Expression {
     private String name;
     private String strValue;
+
+    public static final String majorKey = "1_majorKey_";
+    public static int varNumber;
+    public static HashMap<String, Expression> blockEx;
+
     public LinkedHashMap<String, Var> tempEx;
     public ArrayList<String> tempOp;
+    public Var varValue;
 
-    public Expression() {
-        this.tempEx = new LinkedHashMap<String, Var>();
-        this.tempOp = new ArrayList<String>();
+    static {
+        blockEx = new HashMap<>();
+        varNumber = 0;
     }
-    public Expression(LinkedHashMap<String, Var> tempEx, ArrayList<String> tempOp) {
-        this.tempEx = tempEx;
-        this.tempOp = tempOp;
+    public Expression() {
+        this.tempEx = new LinkedHashMap<>();
+        this.tempOp = new ArrayList<>();
+    }
+    public Expression(String strValue) {
+        this();
+        this.strValue = strValue;
     }
 
     public String getName() {
@@ -36,28 +43,9 @@ public class Expression {
         this.strValue = strValue;
     }
 
-    public boolean isBrackets(String str){
-        boolean res = false;
-        Stack<Character> stack = new Stack<>();
-        for(int i = 0; i < str.length(); i++){
-            switch (str.charAt(i)){
-                case '{': stack.push('{'); break;
-                case '(': stack.push('('); break;
-                case '[': stack.push('['); break;
-                case '}':
-                    if(!stack.isEmpty() && stack.pop().compareTo('{') == 0){ break; }
-                    else{ return res;}
-                case ')':
-                    if(!stack.isEmpty() && stack.pop().compareTo('(') == 0){ break; }
-                    else{ return res; }
-                case ']':
-                    if(!stack.isEmpty() && stack.pop().compareTo('[') == 0){ break; }
-                    else{ return res; }
-                default: break;
-            }
-
-        }
-        if(stack.isEmpty()) res = true;
-        return res;
+    static void clearBuffer(){
+        blockEx = new HashMap<>();
+        varNumber = 0;
     }
+
 }
