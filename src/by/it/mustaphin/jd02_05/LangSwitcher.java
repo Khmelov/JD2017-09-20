@@ -15,13 +15,12 @@ public class LangSwitcher {
         String locLine = sc.nextLine();
         switch (locLine) {
             case "en":
-                return Locale.getDefault();
+                return Locale.US;
             case "ru":
                 return new Locale("ru", "RU");
             case "be":
                 return new Locale("be", "BY");
             default:
-                System.out.println(locLine);
                 chooseLocale();
                 break;
         }

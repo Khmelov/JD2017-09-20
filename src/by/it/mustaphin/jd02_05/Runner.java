@@ -21,7 +21,7 @@ public class Runner {
         Locale locale = switcher.chooseLocale();
         ResMan.INSTANCE.setLocale(locale);
         System.out.println(ResMan.INSTANCE.getString(Msg.WELCOME));
-        System.out.println(ResMan.INSTANCE.getString(Msg.TEST));
+        System.out.println(ResMan.INSTANCE.getString(Msg.HOWDOYOUDO));
         System.out.println(ResMan.INSTANCE.getString(Msg.NAME));
         System.out.println(ResMan.INSTANCE.getString(Msg.TEST));
 
