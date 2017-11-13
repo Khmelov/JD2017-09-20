@@ -1,0 +1,4 @@
+msg.welcome=Привет
+msg.name=Марат
+msg.howdoyoudo=Как дела?
+msg.test=раз \n два + =

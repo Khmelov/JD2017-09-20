@@ -1,0 +1,4 @@
+#! /bin/bash
+native2ascii -encoding utf-8 /home/marat/IdeaProjects/JD2017-09-20/src/by/it/mustaphin/jd02_05/txt/messages.txt /home/marat/IdeaProjects/JD2017-09-20/src/by/it/mustaphin/jd02_05/res/messages_ru_RU.properties
+native2ascii -encoding utf-8 /home/marat/IdeaProjects/JD2017-09-20/src/by/it/mustaphin/jd02_05/txt/messages_be_BY.txt /home/marat/IdeaProjects/JD2017-09-20/src/by/it/mustaphin/jd02_05/res/messages_ru_RU.properties
+native2ascii -encoding utf-8 /home/marat/IdeaProjects/JD2017-09-20/src/by/it/mustaphin/jd02_05/txt/messages_ru_RU.txt /home/marat/IdeaProjects/JD2017-09-20/src/by/it/mustaphin/jd02_05/res/messages_ru_RU.properties
