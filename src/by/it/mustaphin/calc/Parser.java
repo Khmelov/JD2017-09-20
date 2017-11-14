@@ -16,17 +16,14 @@ public class Parser {
 
     void parseExpression(String line) {
         StoreData.storeToProp(line);
-        String[] max = new String[]{"*", "/"};
-        String[] med = new String[]{"+", "-"};
-        String[] min = new String[]{"="};
-        List<String[]> priority = new ArrayList<>();
-        priority.add(min);
-        priority.add(med);
-        priority.add(max);
-
         Matcher matA = operation.matcher(line);
         Matcher matN = varNewName.matcher(line);
         Matcher uoa = usedOrAny.matcher(line);
+
+        List<String[]> priority = new ArrayList<>();
+        priority.add(new String[]{"="});
+        priority.add(new String[]{"+", "-"});
+        priority.add(new String[]{"*", "/"});
 
         List<Var> varList = new ArrayList<>();
         while (uoa.find()) {
@@ -45,19 +42,33 @@ public class Parser {
             actions.add(matA.group());
         }
 
-        while (matA.find() & matN.find()) {
-            System.out.println(matA.find());
+        String newVarName = "";
+        if (matN.find()) {
+            newVarName = matN.group();
+        }
+
+        for (int i = actions.size() - 1; i >= 0; i--) {
+            if (priority.get(0)[0].equals(actions.get(i)) || priority.get(0)[1].equals(actions.get(i))) {
+
+            } else if (priority.get(1)[0].equals(actions.get(i)) || priority.get(1)[1].equals(actions.get(i))) {
+
+            } else if (priority.get(2)[0].equals(actions.get(i))) {
+
+            }
+        }
+
+        while (matA.find()) {
             if (matA.group().equals("+")) {
-                StoreData.data.put(matN.group(), add(varList.get(0), varList.get(1)));
+                StoreData.data.put(newVarName, add(varList.get(0), varList.get(1)));
             }
             if (matA.group().equals("-")) {
-                StoreData.data.put(matN.group(), sub(varList.get(0), varList.get(1)));
+                StoreData.data.put(newVarName, sub(varList.get(0), varList.get(1)));
             }
             if (matA.group().equals("*")) {
-                StoreData.data.put(matN.group(), mul(varList.get(0), varList.get(1)));
+                StoreData.data.put(newVarName, mul(varList.get(0), varList.get(1)));
             }
             if (matA.group().equals("/")) {
-                StoreData.data.put(matN.group(), div(varList.get(0), varList.get(1)));
+                StoreData.data.put(newVarName, div(varList.get(0), varList.get(1)));
             }
         }
         StoreData.writeData();
