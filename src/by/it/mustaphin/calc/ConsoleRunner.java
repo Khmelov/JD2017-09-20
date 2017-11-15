@@ -13,7 +13,7 @@ public class ConsoleRunner {
         Parser parser = new Parser();
         parser.parseExpression("A=44/55");
         parser.parseExpression("B=44-55");
-        parser.parseExpression("C=44/55");
+        parser.parseExpression("C=44+55");
         parser.parseExpression("D=44*55");
     }
 }
