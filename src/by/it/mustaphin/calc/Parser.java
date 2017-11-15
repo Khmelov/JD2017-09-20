@@ -16,6 +16,8 @@ public class Parser {
 
     String newVarName = "";
     List<Var> varList = new ArrayList<>();
+    List<String> actions = new ArrayList<>();
+    List<String[]> priority = new ArrayList<>();
 
     void parseExpression(String line) {
         StoreData.storeToProp(line);
@@ -23,7 +25,6 @@ public class Parser {
         Matcher matN = varNewName.matcher(line);
         Matcher uoa = usedOrAny.matcher(line);
 
-        List<String[]> priority = new ArrayList<>();
         priority.add(new String[]{"="});
         priority.add(new String[]{"+", "-"});
         priority.add(new String[]{"*", "/"});
@@ -39,7 +40,6 @@ public class Parser {
             }
         }
 
-        List<String> actions = new ArrayList<>();
         while (matA.find()) {
             actions.add(matA.group());
         }
@@ -47,37 +47,46 @@ public class Parser {
         if (matN.find()) {
             newVarName = matN.group();
         }
+        doMathAct();
+        StoreData.writeData();
+        varList.clear();
+    }
 
+    void doMathAct() {
         for (int i = actions.size() - 1; i >= 0; i--) {
             if (priority.get(0)[0].equals(actions.get(i)) || priority.get(0)[1].equals(actions.get(i))) {
                 if (actions.get(i).equals("*")) {
+                    varList.remove(i + 1);
                     varList.add(i, mul(varList.get(i), varList.get(i + 1)));
+                    if (varList.size() > 1) {
+                        doMathAct();
+                    }
+                } else if (actions.get(i).equals("/")) {
+                    varList.remove(i + 1);
+                    varList.add(i, div(varList.get(i), varList.get(i + 1)));
+                    if (varList.size() > 1) {
+                        doMathAct();
+                    }
                 }
                 continue;
             } else if (priority.get(1)[0].equals(actions.get(i)) || priority.get(1)[1].equals(actions.get(i))) {
-
+                if (actions.get(i).equals("+")) {
+                    varList.remove(i + 1);
+                    varList.add(i, add(varList.get(i), varList.get(i + 1)));
+                    if (varList.size() > 1) {
+                        doMathAct();
+                    }
+                } else if (actions.get(i).equals("-")) {
+                    varList.remove(i + 1);
+                    varList.add(i, sub(varList.get(i), varList.get(i + 1)));
+                    if (varList.size() > 1) {
+                        doMathAct();
+                    }
+                }
             } else if (priority.get(2)[0].equals(actions.get(i))) {
 
             }
         }
-
-    }
-
-    void doMathAct(String action) {
-        if (action.equals("+")) {
-            StoreData.data.put(newVarName, add(varList.get(0), varList.get(1)));
-        }
-        if (action.equals("-")) {
-            StoreData.data.put(newVarName, sub(varList.get(0), varList.get(1)));
-        }
-        if (action.equals("*")) {
-            StoreData.data.put(newVarName, mul(varList.get(0), varList.get(1)));
-        }
-        if (action.equals("/")) {
-            StoreData.data.put(newVarName, div(varList.get(0), varList.get(1)));
-        }
-        StoreData.writeData();
-        varList.clear();
     }
 
     boolean checkVarType(String value, Pattern pat) {
