@@ -51,6 +51,7 @@ public class Parser {
         for (int i = actions.size() - 1; i >= 0; i--) {
             if (priority.get(0)[0].equals(actions.get(i)) || priority.get(0)[1].equals(actions.get(i))) {
                 if (actions.get(i).equals("*")) {
+
                     varList.add(i, mul(varList.get(i), varList.get(i + 1)));
                 }
                 continue;
