@@ -26,7 +26,7 @@ public class Parser {
         Matcher uoa = usedOrAny.matcher(line);
 
         //1. Можноли одновременно прасить разные паттерны?
-        //2. Не парсятся отдельно дискретные числа
+        //2. Не парсятся отдельные дискретные числа с помощью Patterns.exAny
         while (uoa.find()) {
             Matcher usedName = varUsedName.matcher(uoa.group());
             Matcher anyV = anyVar.matcher(uoa.group());
@@ -45,12 +45,12 @@ public class Parser {
         if (matN.find()) {
             newVarName = matN.group();
         }
+
         doMathAct();
         StoreData.data.put(newVarName, varList.get(0));
         StoreData.writeData();
         varList.clear();
         actions.clear();
-        newVarName = "";
     }
 
     void doMathAct() {
