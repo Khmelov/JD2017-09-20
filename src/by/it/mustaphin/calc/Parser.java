@@ -25,6 +25,8 @@ public class Parser {
         Matcher matN = varNewName.matcher(line);
         Matcher uoa = usedOrAny.matcher(line);
 
+        //1. Можноли одновременно прасить разные паттерны?
+        //2. Не парсятся отдельно дискретные числа
         while (uoa.find()) {
             Matcher usedName = varUsedName.matcher(uoa.group());
             Matcher anyV = anyVar.matcher(uoa.group());
@@ -43,25 +45,25 @@ public class Parser {
         if (matN.find()) {
             newVarName = matN.group();
         }
-
         doMathAct();
+        StoreData.data.put(newVarName, varList.get(0));
         StoreData.writeData();
         varList.clear();
+        actions.clear();
+        newVarName = "";
     }
 
     void doMathAct() {
         for (int i = actions.size() - 1; i >= 0; i--) {
-
             if (priority.get(3).equals(actions.get(i)) || priority.get(4).equals(actions.get(i))) {
                 if (actions.get(i).equals("*")) {
-                    varList.add(i, mul(varList.get(i), varList.get(i + 1)));
-                    varList.remove(i + 1);
+                    varList.set(i, mul(varList.get(i - 1), varList.get(i)));
+                    varList.remove(i);
                     if (varList.size() > 1) {
                         doMathAct();
                     }
                 } else if (actions.get(i).equals("/")) {
-                    varList.add(i, div(varList.get(i - 1), varList.get(i)));
-                    System.out.println(varList.size());
+                    varList.set(i, div(varList.get(i - 1), varList.get(i)));
                     varList.remove(i);
                     if (varList.size() > 1) {
                         doMathAct();
@@ -70,14 +72,14 @@ public class Parser {
                 continue;
             } else if (priority.get(2).equals(actions.get(i)) || priority.get(1).equals(actions.get(i))) {
                 if (actions.get(i).equals("+")) {
-                    varList.add(i, add(varList.get(i), varList.get(i + 1)));
-                    varList.remove(i + 1);
+                    varList.set(i, add(varList.get(i - 1), varList.get(i)));
+                    varList.remove(i);
                     if (varList.size() > 1) {
                         doMathAct();
                     }
                 } else if (actions.get(i).equals("-")) {
-                    varList.add(i, sub(varList.get(i), varList.get(i + 1)));
-                    varList.remove(i + 1);
+                    varList.set(i, sub(varList.get(i - 1), varList.get(i)));
+                    varList.remove(i);
                     if (varList.size() > 1) {
                         doMathAct();
                     }
