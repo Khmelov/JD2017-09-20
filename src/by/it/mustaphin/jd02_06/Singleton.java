@@ -1,17 +1,14 @@
-package by.it.mustaphin;
+package by.it.mustaphin.jd02_06;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Singleton {
 
-    static {
-        System.getProperty("user.dir")+"/src/by/it/mustaphin/jd02_06/";
-        Path path = Paths.get();
-    }
-
     private static volatile Singleton instance;
+    private String path = System.getProperty("user.dir") + "/src/by/it/mustaphin/jd02_06/log.txt";
+
 
     public static Singleton getInstance() {
         Singleton localInstance = instance;
@@ -24,5 +21,14 @@ public class Singleton {
             }
         }
         return localInstance;
+    }
+
+    void writeLog(String text) {
+        Date date = new Date();
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File(path), true))) {
+            bw.write(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(date) + " : " + text + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
