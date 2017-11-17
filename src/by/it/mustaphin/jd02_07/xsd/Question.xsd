@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://by.it.mustaphin.jd02_07.xsd.Question"
+        xmlns:tns="http://by.it.mustaphin.jd02_07.xsd.Question"
+        elementFormDefault="qualified">
+    <element name="Questions">
+        <complexType>
+            <sequence>
+                <element name="Question"
+                         type="tns:Question"
+                         maxOccurs="unbounded">
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
