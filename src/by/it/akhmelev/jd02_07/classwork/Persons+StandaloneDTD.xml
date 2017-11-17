@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE Persons[
+        <!ELEMENT Persons (Person)+>
+        <!ELEMENT Person (Email, Nickname, Password, Ads) >
+        <!ELEMENT Email (#PCDATA) >
+        <!ELEMENT Nickname (#PCDATA) >
+        <!ELEMENT Password (#PCDATA) >
+        <!ELEMENT Ads (Ad)+>
+        <!ELEMENT Ad (Description, Address, Floor, Floors, Square, Price) >
+        <!ELEMENT Description (#PCDATA) >
+        <!ELEMENT Address (#PCDATA) >
+        <!ELEMENT Floor (#PCDATA) >
+        <!ELEMENT Floors (#PCDATA) >
+        <!ELEMENT Price (#PCDATA) >
+        <!ELEMENT Square (#PCDATA) >
+]>
+<Persons>
+    <Person>
+        <Email>asdd@sdasd.it</Email>
+        <Nickname>asdd123</Nickname>
+        <Password>qwerty</Password>
+        <Ads>
+            <Ad>
+                <Description>Отличный вариант</Description>
+                <Address>Минск Ленина 24 кв. 5</Address>
+                <Floor>3</Floor>
+                <Floors>5</Floors>
+                <Square> 49.0 </Square>
+                <Price>9999.99</Price>
+            </Ad>
+        </Ads>
+    </Person>
+</Persons>

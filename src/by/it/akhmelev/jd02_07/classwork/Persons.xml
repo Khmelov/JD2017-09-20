@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Pesrons>
+    <Person>
+        <Email>asdd@sdasd.it</Email>
+        <Nickname>asdd123</Nickname>
+        <Password>qwerty</Password>
+        <Ads>
+            <Ad>
+                <Description>Отличный вариант</Description>
+                <Address>Минск Ленина 24 кв. 5</Address>
+                <Floor>3</Floor>
+                <Floors>5</Floors>
+                <Square> 49.0 </Square>
+            </Ad>
+        </Ads>
+    </Person>
+</Pesrons>
