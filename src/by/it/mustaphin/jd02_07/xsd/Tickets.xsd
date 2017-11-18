@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://by.it.mustaphin/Tickets"
+        xmlns:tns="http://by.it.mustaphin/Tickets"
+        elementFormDefault="qualified">
+    <element name="Tickets">
+        <complexType>
+            <sequence>
+                <element name="Order" type="string"/>
+                <element name="Header" type="tns:Header" minOccurs="1" maxOccurs="2"/>
+                <element name="Ticket" type="tns:Ticket" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Header">
+        <sequence>
+            <element name="HeaderNumber" type="int"/>
+            <element name="HeaderText" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="Ticket">
+        <sequence>
+            <element name="TicketNumber" type="string"/>
+            <element name="Desc" type="string"/>
+            <element name="Image" type="anyURI"/>
+            <element name="Question" type="string"/>
+            <element name="Answers" type="tns:Answers"/>
+        </sequence>
+    </complexType>
+    <complexType name="Answers">
+        <sequence>
+            <element name="Answer" minOccurs="1" maxOccurs="4" type="tns:Answer"/>
+        </sequence>
+    </complexType>
+    <complexType name="Answer">
+        <sequence>
+            <element name="AnswerNumber" type="int"/>
+            <element name="Text" type="string"/>
+        </sequence>
+    </complexType>
+
+</schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+        <!ELEMENT Tickets (Order, Header, Ticket)+>
+        <!ELEMENT Order (#PCDATA)>
+        <!ELEMENT Header (HeaderNumber, HeaderText)>
+        <!ELEMENT HeaderNumber (#PCDATA)>
+        <!ELEMENT HeaderText (#PCDATA)>
+        <!ELEMENT Ticket (TicketNumber, Desc, Image, Question, Answers)>
+        <!ELEMENT TicketNumber (#PCDATA)>
+        <!ELEMENT Desc (#PCDATA)>
+        <!ELEMENT Image (#PCDATA)>
+        <!ELEMENT Question (#PCDATA)>
+        <!ELEMENT Answers (Answer)+>
+        <!ELEMENT Answer (AnswerNumber, Text)>
+        <!ELEMENT AnswerNumber (#PCDATA)>
+        <!ELEMENT Text (#PCDATA)>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Tickets [
+        <!ELEMENT Tickets (Order, Header, Ticket)+>
+        <!ELEMENT Order (#PCDATA)>
+        <!ELEMENT Header (HeaderNumber, HeaderText)>
+        <!ELEMENT HeaderNumber (#PCDATA)>
+        <!ELEMENT HeaderText (#PCDATA)>
+        <!ELEMENT Ticket (TicketNumber, Desc, Image, Question, Answers)>
+        <!ELEMENT TicketNumber (#PCDATA)>
+        <!ELEMENT Desc (#PCDATA)>
+        <!ELEMENT Image (#PCDATA)>
+        <!ELEMENT Question (#PCDATA)>
+        <!ELEMENT Answers (Answer)+>
+        <!ELEMENT Answer (AnswerNumber, Text)>
+        <!ELEMENT AnswerNumber (#PCDATA)>
+        <!ELEMENT Text (#PCDATA)>
+        ]>
+<Tickets>
+    <Order>
+        W=44
+    </Order>
+    <Header>
+        <HeaderNumber>
+            1
+        </HeaderNumber>
+        <HeaderText>
+            Инструкция о порядке проведения обязательных медицинских осмотров работающих,
+            (Утв. пост. Министерства здравоохранения РБ от 28 апреля 2010 № 47)
+        </HeaderText>
+    </Header>
+    <Header>
+        <HeaderNumber>
+            2
+        </HeaderNumber>
+        <HeaderText>
+            Правила по охране труда в организациях здравоохранения.
+            (Утв. пост. Министерства здравоохранения Республики Беларусь 10.06.2009 №64)
+        </HeaderText>
+    </Header>
+    <Ticket>
+        <TicketNumber>
+            N01
+        </TicketNumber>
+        <Desc>
+            (Л1 п.1.)
+        </Desc>
+        <Image>
+            medos.wmf
+        </Image>
+        <Question>
+            Что устанавливает Инструкция о порядке проведения обязательных медицинских
+            осмотров работающих?
+        </Question>
+        <Answers>
+            <Answer>
+                <AnswerNumber>
+                    1
+                </AnswerNumber>
+                <Text>
+                    Порядок проведения обязательных медицинских
+                    осмотров лиц, поступающих на работу, а также работающих,
+                    занятых на работах с вредными и (или) опасными условиями
+                    труда или на работах, для выполнения которых есть
+                    необходимость в профессиональном отборе.
+                </Text>
+            </Answer>
+            <Answer>
+                <AnswerNumber>
+                    2
+                </AnswerNumber>
+                <Text>
+                    Порядок проведения предрейсовых медицинских
+                    осмотров водителей автотранспорта.
+                </Text>
+            </Answer>
+            <Answer>
+                <AnswerNumber>
+                    3
+                </AnswerNumber>
+                <Text>
+                    Порядок проведения медицинского освидетельствования
+                    работников в случае подозрения в употреблении алкоголя,
+                    наркотических и токсикологических средств.
+                </Text>
+            </Answer>
+            <Answer>
+                <AnswerNumber>
+                    4
+                </AnswerNumber>
+                <Text>
+                    Все, что указано в других вариантах ответа.
+                </Text>
+            </Answer>
+        </Answers>
+    </Ticket>
+    <Ticket>
+        <TicketNumber>
+            N02
+        </TicketNumber>
+        <Desc>
+            (Л1 п.1.)
+        </Desc>
+        <Image>
+            medos1.wmf
+        </Image>
+        <Question>
+            Какие существуют виды обязательных медицинских
+            осмотров работающих?
+        </Question>
+        <Answers>
+            <Answer>
+                <AnswerNumber>
+                    1
+                </AnswerNumber>
+                <Text>
+                    Предварительные (при поступлении на работу), периодические (в течении
+                    трудовой деятельности) и внеочередные.
+                </Text>
+            </Answer>
+            <Answer>
+                <AnswerNumber>
+                    2
+                </AnswerNumber>
+                <Text>
+                    Предварительные (при поступлении на работу), ежегодные (в течении трудовой
+                    деятельности).
+                </Text>
+            </Answer>
+            <Answer>
+                <AnswerNumber>
+                    3
+                </AnswerNumber>
+                <Text>
+                    Предварительные (при поступлении на работу), периодические (1 раз в 2
+                    года) и предрейсовые.
+                </Text>
+            </Answer>
+            <Answer>
+                <AnswerNumber>
+                    4
+                </AnswerNumber>
+                <Text>
+                    Предварительные (при поступлении на работу), внеочередные (при ухудшении
+                    состояния здоровья) и предрейсовые.
+                </Text>
+            </Answer>
+        </Answers>
+    </Ticket>
+</Tickets>
