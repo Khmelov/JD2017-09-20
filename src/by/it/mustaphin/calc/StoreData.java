@@ -23,7 +23,7 @@ public class StoreData {
         }
     }
 
-    static void storeToProp(String line){
+    static void writeToLog(String line){
         try (FileWriter out = new FileWriter(new File(System.getProperty("user.dir") + "/src/by/it/mustaphin/calc/log.txt"), true)) {
             out.write(line + "\n");
         } catch (IOException e) {
@@ -31,7 +31,7 @@ public class StoreData {
         }
     }
 
-    static void writeData() {
+    static void writeVar() {
         try (FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "/src/by/it/mustaphin/calc/vars.txt")) {
             Map<String, String> dataValueToStr = new HashMap<>();
             for (Map.Entry<String, Var> me : data.entrySet()) {
