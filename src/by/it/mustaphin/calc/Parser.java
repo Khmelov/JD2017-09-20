@@ -9,7 +9,7 @@ public class Parser {
     Pattern varsD = Pattern.compile(Patterns.exVal);
     Pattern varsV = Pattern.compile(Patterns.exVec);
     Pattern operation = Pattern.compile(Patterns.exOper);
-    Pattern characters = Pattern.compile("[A-Z][0-1]?");
+    Pattern characters = Pattern.compile("[A-Z][0-9]?");
     Pattern anyVar = Pattern.compile(Patterns.exAny);
 
     String newVarName = "";
@@ -83,6 +83,7 @@ public class Parser {
             }
         }
         if (actions.size() == 1 && actions.get(0).equals("=")) {
+            System.out.println(varList.get(0));
             StoreData.data.put(newVarName, varList.get(0));
             StoreData.writeVar();
             System.exit(0);

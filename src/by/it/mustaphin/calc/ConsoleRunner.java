@@ -11,6 +11,9 @@ public class ConsoleRunner {
 
 //        new Parser().read(args[0]);
         Parser parser = new Parser();
-        parser.parseExpression("G1=A+-23*F");
+//        parser.parseExpression("A=2+5.3");
+//        parser.parseExpression("B=A*3.5");
+//        parser.parseExpression("B1=B+0.11*-5");
+        parser.parseExpression("B2=A/2-1");
     }
 }
