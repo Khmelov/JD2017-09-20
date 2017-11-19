@@ -19,7 +19,7 @@ public class Parser {
 
     void parseExpression(String line) {
         StoreData.writeToLog(line);
-        String operands[] = line.split("[-+*/=]");
+        String operands[] = line.split(Patterns.exOper);
         for (String operand : operands) {
             Matcher charMatcher = characters.matcher(operand);
             Matcher anyMatcher = anyVar.matcher(operand);
@@ -33,15 +33,12 @@ public class Parser {
                 varList.add(getVar(anyMatcher.group()));
             }
         }
-
         Matcher matA = operation.matcher(line);
         while (matA.find()) {
             actions.add(matA.group());
         }
 
         doMathAct();
-
-
         varList.clear();
         actions.clear();
     }
@@ -52,35 +49,43 @@ public class Parser {
                 if (actions.get(i).equals("*")) {
                     varList.set(i - 1, mul(varList.get(i - 1), varList.get(i)));
                     varList.remove(i);
+                    actions.remove(i);
                     if (varList.size() > 1) {
                         doMathAct();
                     }
                 } else if (actions.get(i).equals("/")) {
                     varList.set(i - 1, div(varList.get(i - 1), varList.get(i)));
                     varList.remove(i);
+                    actions.remove(i);
                     if (varList.size() > 1) {
                         doMathAct();
                     }
                 }
-                continue;
-            } else if (priority.get(2).equals(actions.get(i)) || priority.get(1).equals(actions.get(i))) {
+            }
+        }
+        for (int i = actions.size() - 1; i >= 0; i--) {
+            if (priority.get(2).equals(actions.get(i)) || priority.get(1).equals(actions.get(i))) {
                 if (actions.get(i).equals("+")) {
                     varList.set(i - 1, add(varList.get(i - 1), varList.get(i)));
                     varList.remove(i);
+                    actions.remove(i);
                     if (varList.size() > 1) {
                         doMathAct();
                     }
                 } else if (actions.get(i).equals("-")) {
                     varList.set(i - 1, sub(varList.get(i - 1), varList.get(i)));
                     varList.remove(i);
+                    actions.remove(i);
                     if (varList.size() > 1) {
                         doMathAct();
                     }
                 }
-            } else if (priority.get(0).equals(actions.get(i))) {
-                StoreData.data.put(newVarName, varList.get(0));
-                StoreData.writeVar();
             }
+        }
+        if (actions.size() == 1 && actions.get(0).equals("=")) {
+            StoreData.data.put(newVarName, varList.get(0));
+            StoreData.writeVar();
+            System.exit(0);
         }
     }
 
