@@ -83,10 +83,13 @@ public class Parser {
             }
         }
         if (actions.size() == 1 && actions.get(0).equals("=")) {
-            System.out.println(varList.get(0));
-            StoreData.data.put(newVarName, varList.get(0));
-            StoreData.writeVar();
-            System.exit(0);
+//            for (Var v : varList) {
+//                System.out.println(v);
+//            }
+//            System.out.println(varList.get(0));
+//            StoreData.data.put(newVarName, varList.get(0));
+//            StoreData.writeVar();
+//            System.exit(0);
         }
     }
 
