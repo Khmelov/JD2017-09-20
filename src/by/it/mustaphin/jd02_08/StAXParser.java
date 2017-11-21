@@ -11,13 +11,10 @@ import java.io.IOException;
 public class StAXParser {
 
     XMLStreamReader reader;
-
-    public StAXParser() {
-    }
+    public static final File FILE = new File("src" + File.separator + "by" + File.separator + "it" + File.separator + "mustaphin" + File.separator + "jd02_08" + File.separator + "Tickets.xml");
 
     void toDO() {
-        File file = new File("src" + File.separator + "by" + File.separator + "it" + File.separator + "mustaphin" + File.separator + "jd02_08" + File.separator + "Tickets.xml");
-        try (FileInputStream fis = new FileInputStream(file)) {
+        try (FileInputStream fis = new FileInputStream(FILE)) {
             XMLInputFactory factory = XMLInputFactory.newInstance();
             reader = factory.createXMLStreamReader(fis);
             while (reader.hasNext()) {
