@@ -39,7 +39,8 @@ public class Runner {
 
 
 
-   //  User
+        //  User
+    //---------------------------------------------------------------------------------------
        dao=DAO.getInstanceUser();
      User user=new User("Login1","pass","name","nick",243,1);
         showUser("1");
