@@ -25,9 +25,9 @@ public class FrontController extends HttpServlet{
         if (nextAction==null) {
             RequestDispatcher disp=req.getRequestDispatcher(cmd.getJsp());
             disp.include(req,resp);}
-        else
-
+        else {
             resp.sendRedirect(nextAction.getJsp());
-    }
+        }
 
+    }
 }

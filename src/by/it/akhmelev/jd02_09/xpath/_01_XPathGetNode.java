@@ -24,7 +24,7 @@ public class _01_XPathGetNode {
     public static void main(String[] args) throws XPathExpressionException {
         String expression = "/students/student[@login='zPav16']/name";
         System.out.println(getText(expression));
-        expression = "/students/student[@login='zPav16']/address";
+        expression = "/students/student[@login='zPav16']/Address";
         System.out.println(getText(expression));
     }
 }

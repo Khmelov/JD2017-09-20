@@ -4,13 +4,14 @@
          version="3.0"
          metadata-complete="true">
 
+    <display-name>Servlet FrontControllerServlet</display-name>
 
     <servlet>
-        <servlet-name>HelloFuck</servlet-name>
-        <servlet-class>FrontController</servlet-class>
+        <servlet-name>FrontControllerServlet</servlet-name>
+        <servlet-class>by.it.govor.bigBossProject.java.controller.FrontController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>HelloFuck</servlet-name>
+        <servlet-name>FrontControllerServlet</servlet-name>
         <url-pattern>/do</url-pattern>
     </servlet-mapping>
 
