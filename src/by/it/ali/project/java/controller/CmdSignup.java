@@ -1,7 +1,7 @@
 package by.it.ali.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import by.it.ali.project.dao.*;
+import by.it.ali.project.java.dao.*;
 
 class CmdSignup extends AbstractAction {
     @Override

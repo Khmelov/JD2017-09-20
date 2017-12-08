@@ -1,10 +1,9 @@
 package by.it.ali.project.java.controller;
 
 //import by.it.ali.project.java.controller.*;
-import by.it.ali.project.dao.*;
+import by.it.ali.project.java.dao.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class CmdLogin extends AbstractAction{

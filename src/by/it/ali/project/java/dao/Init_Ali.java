@@ -1,4 +1,4 @@
-package by.it.ali.project.dao;
+package by.it.ali.project.java.dao;
 
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
