@@ -17,7 +17,7 @@ public class UserDAO extends AbstractDAO implements InDAO<User>{
                 "insert into users(Login,Password,Email,FKroles, FKroles_additional ) values('%s','%s','%s',%d,%d);",
                 user.getLogin(), user.getPassword(), user.getEmail(), user.getFk_Roles(), user.getFk_Roles_additional()
         );
-        int id=executeUpdate(createUserSQL);
+        int id=executeCreate(createUserSQL);
         if (id>0) user.setId(id);
         return (id>0);
     }
@@ -33,7 +33,7 @@ public class UserDAO extends AbstractDAO implements InDAO<User>{
 
     @Override
     public boolean delete(User user) throws SQLException {
-        String deleteUserSQL = String.format("DELETE FROM users WHERE users.ID = %d", user.getId());
+        String deleteUserSQL = String.format("DELETE FROM users WHERE users.login = %s", user.getLogin());
         return (0<executeUpdate(deleteUserSQL));
     }
 

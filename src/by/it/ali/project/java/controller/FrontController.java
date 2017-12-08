@@ -20,7 +20,7 @@ public class FrontController extends HttpServlet{
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException  {
         ICommand cmd=new ActionFactory().getCommand(req);
-        ICommand nextAction=cmd.execute();
+        ICommand nextAction=cmd.execute(req);
         // Set to expire far in the past.
         resp.setHeader("Expires", "Sat, 6 May 1995 12:00:00 GMT");
 

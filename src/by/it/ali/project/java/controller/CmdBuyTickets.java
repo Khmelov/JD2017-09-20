@@ -1,6 +1,6 @@
 package by.it.ali.project.java.controller;
 
-import by.it.ali.project.dao.*;
+import by.it.ali.project.java.dao.*;
 
 import javax.servlet.http.HttpServletRequest;
 

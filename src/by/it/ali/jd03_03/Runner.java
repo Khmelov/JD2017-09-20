@@ -24,12 +24,15 @@ public class Runner {
         User us = new User("11","11111", "111111@1111",1,1);
         System.out.println(dao.user.getAll(""));
 
-//        dao.user.create(us);
-//        System.out.println(dao.user.getAll(""));
-//
+        dao.user.create(us);
+       System.out.println(dao.user.getAll(""));
+
+
         us.setEmail("string@tut.by");
+       // System.out.println(us);
         dao.user.update(us);
         System.out.println(dao.user.getAll(""));
-
+        dao.user.delete(us);
+        System.out.println(dao.user.getAll(""));
     }
 }
