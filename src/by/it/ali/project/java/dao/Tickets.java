@@ -74,6 +74,9 @@ public class Tickets {
     public int getPrice() {
         return Price;
     }
+    public void setPrice(int Price) {
+        this.Price = Price;
+    }
 
     public void Price(int Price) {
         this.Price = Price;

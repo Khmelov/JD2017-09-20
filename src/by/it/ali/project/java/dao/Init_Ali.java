@@ -20,6 +20,7 @@ public class Init_Ali {
         }
 
 
+
          try (Connection
             connection = DriverManager.getConnection(URL_DB, USER_DB, PASSWORD_DB);
             Statement statement=connection.createStatement())
@@ -35,31 +36,17 @@ public class Init_Ali {
                              "ENGINE = InnoDB;"
              );
              statement.executeUpdate(
-                     "CREATE TABLE IF NOT EXISTS `ali`.`roles_additional` (\n" +
-                             "  `ID` INT NOT NULL AUTO_INCREMENT,\n" +
-                             "  `Role` VARCHAR(45) NOT NULL,\n" +
-                             "  PRIMARY KEY (`ID`))\n" +
-                             "ENGINE = InnoDB;"
-             );
-             statement.executeUpdate(
                      "CREATE TABLE IF NOT EXISTS `ali`.`users` (\n" +
                              "  `ID` INT NOT NULL AUTO_INCREMENT,\n" +
                              "  `Login` VARCHAR(45) NULL,\n" +
                              "  `Password` VARCHAR(45) NULL,\n" +
                              "  `Email` VARCHAR(45) NULL,\n" +
                              "  `FKroles` INT NOT NULL,\n" +
-                             "  `FKroles_additional` INT NULL,\n" +
                              "  PRIMARY KEY (`ID`),\n" +
                              "  INDEX `fk_users_roles_idx` (`FKroles` ASC),\n" +
-                             "  INDEX `fk_users_roles_additional1_idx` (`FKroles_additional` ASC),\n" +
                              "  CONSTRAINT `fk_users_roles`\n" +
                              "    FOREIGN KEY (`FKroles`)\n" +
                              "    REFERENCES `ali`.`roles` (`ID`)\n" +
-                             "    ON DELETE RESTRICT \n" +
-                             "    ON UPDATE RESTRICT,\n" +
-                             "  CONSTRAINT `fk_users_roles_additiona1l`\n" +
-                             "    FOREIGN KEY (`FKroles_additional`)\n" +
-                             "    REFERENCES `ali`.`roles_additional` (`ID`)\n" +
                              "    ON DELETE RESTRICT \n" +
                              "    ON UPDATE RESTRICT )\n" +
                              "ENGINE = InnoDB;"
@@ -88,16 +75,14 @@ public class Init_Ali {
              );
              statement.executeUpdate("insert into `ali`.`roles`(ID,Role)"+"values(DEFAULT,'Guest');"
              );
-             statement.executeUpdate("insert into `ali`.`roles_additional`(ID,Role)"+"values(DEFAULT,'User');"
-             );
 
-             statement.executeUpdate("insert into `ali`.`roles_additional`(ID,Role)"+"values(DEFAULT,'Premium User');"
+
+
+             statement.executeUpdate("insert into `ali`.`users`(Login,Password,Email,FKroles)"+"values('Admin','Admin','AdminD@gmail.com','1');"
              );
-             statement.executeUpdate("insert into `ali`.`users`(Login,Password,Email,FKroles, FKroles_additional)"+"values('Admin','Admin','AdminD@gmail.com','1','1');"
+             statement.executeUpdate("insert into `ali`.`users`(Login,Password,Email,FKroles)"+"values('Sarah','Moonie','SarahMoon@gmail.com','1');"
              );
-             statement.executeUpdate("insert into `ali`.`users`(Login,Password,Email,FKroles, FKroles_additional)"+"values('Sarah','Moonie','SarahMoon@gmail.com','1','1');"
-             );
-             statement.executeUpdate("insert into `ali`.`users`(Login,Password,Email,FKroles, FKroles_additional)"+"values('Donald','biggie','DonaldD@gmail.com','2','2');"
+             statement.executeUpdate("insert into `ali`.`users`(Login,Password,Email,FKroles)"+"values('Donald','biggie','DonaldD@gmail.com','2');"
              );
              statement.executeUpdate("insert into `ali`.`users`(FKroles)"+"values('3');"
              );

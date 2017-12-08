@@ -28,11 +28,11 @@ public class Runner {
        System.out.println(dao.user.getAll(""));
 
 
-        us.setEmail("string@tut.by");
-       // System.out.println(us);
-        dao.user.update(us);
-        System.out.println(dao.user.getAll(""));
-        dao.user.delete(us);
-        System.out.println(dao.user.getAll(""));
+//        us.setEmail("string@tut.by");
+//       // System.out.println(us);
+//        dao.user.update(us);
+//        System.out.println(dao.user.getAll(""));
+//        dao.user.delete(us);
+//        System.out.println(dao.user.getAll(""));
     }
 }

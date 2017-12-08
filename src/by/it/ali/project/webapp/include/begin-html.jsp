@@ -44,6 +44,9 @@
                   <li class="nav-item">
                       <a class="nav-link" href="do?command=Login">Login</a>
                   </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="do?command=Profile">Profile</a>
+                  </li>
               </ul>
           </div>
       </nav>

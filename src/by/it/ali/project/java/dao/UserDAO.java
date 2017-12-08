@@ -8,16 +8,22 @@ public class UserDAO extends AbstractDAO implements InDAO<User> {
     private static final String URL_DB = "jdbc:mysql://127.0.0.1:2016/ali";
     private static final String USER_DB = "root";
     private static final String PASSWORD_DB = "";
-
+    static {
+        try { //регистрируем драйвер
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @Override
     public boolean create(User user) throws SQLException {
         String createUserSQL = String.format(
-                "insert into users(Login,Password,Email,FKroles, FKroles_additional ) values('%s','%s','%s',%d,%d);",
-                user.getLogin(), user.getPassword(), user.getEmail(), user.getFk_Roles(), user.getFk_Roles_additional()
+                "insert into users(Login,Password,Email,FKroles) values('%s','%s','%s',%d);",
+                user.getLogin(), user.getPassword(), user.getEmail(), user.getFk_Roles()
         );
-        int id=executeUpdate(createUserSQL);
+        int id=executeCreate(createUserSQL);
         if (id>0) user.setId(id);
         return (id>0);
     }
@@ -33,7 +39,7 @@ public class UserDAO extends AbstractDAO implements InDAO<User> {
 
     @Override
     public boolean delete(User user) throws SQLException {
-        String deleteUserSQL = String.format("DELETE FROM users WHERE users.ID = %d", user.getId());
+        String deleteUserSQL = String.format("DELETE FROM users WHERE users.login = %s", user.getLogin());
         return (0<executeUpdate(deleteUserSQL));
     }
 
@@ -59,8 +65,7 @@ public class UserDAO extends AbstractDAO implements InDAO<User> {
                         resultSet.getString("Login"),
                         resultSet.getString("Password"),
                         resultSet.getString("Email"),
-                        resultSet.getInt("FKroles"),
-                        resultSet.getInt("FKroles_additional"));
+                        resultSet.getInt("FKroles"));
                 users.add(tmpUser);
             }
         }
