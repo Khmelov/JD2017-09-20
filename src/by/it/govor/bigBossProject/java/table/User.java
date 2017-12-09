@@ -1,4 +1,4 @@
-package by.it.govor.bigBossProject.table;
+package by.it.govor.bigBossProject.java.table;
 
 
 public class User {  private int id;
@@ -8,6 +8,9 @@ public class User {  private int id;
     private String password;
     private int telephone;
     private int role_ID;
+
+    public User() {
+    }
 
     public int getId() {
         return id;

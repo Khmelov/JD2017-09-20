@@ -1,11 +1,11 @@
 package by.it.govor.bigBossProject;
 
 
-import by.it.govor.bigBossProject.dao.DAO;
-import by.it.govor.bigBossProject.table.Ad;
-import by.it.govor.bigBossProject.table.Address;
-import by.it.govor.bigBossProject.table.Role;
-import by.it.govor.bigBossProject.table.User;
+import by.it.govor.bigBossProject.java.dao.DAO;
+import by.it.govor.bigBossProject.java.table.Ad;
+import by.it.govor.bigBossProject.java.table.Address;
+import by.it.govor.bigBossProject.java.table.Role;
+import by.it.govor.bigBossProject.java.table.User;
 
 import java.sql.SQLException;
 import java.util.List;

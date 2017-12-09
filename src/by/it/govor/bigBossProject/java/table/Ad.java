@@ -1,4 +1,4 @@
-package by.it.govor.bigBossProject.table;
+package by.it.govor.bigBossProject.java.table;
 
 
 public class Ad {

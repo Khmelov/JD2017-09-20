@@ -1,4 +1,4 @@
-package by.it.govor.bigBossProject;
+package by.it.govor.bigBossProject.java;
 
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
 

@@ -16,7 +16,7 @@
 
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href=".">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,13 +39,13 @@
             </ul>
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
-                    <a class="nav-link" href="do?command=SignUp">SignUp</a>
+                    <a class="nav-link" href="do?command=SignUp">Signup</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="do?command=Login">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="do?command=Logout">Logout</a>
+                    <a class="nav-link" href="do?command=Logout">Profile</a>
                 </li>
 
             </ul>

@@ -1,8 +1,8 @@
-package by.it.govor.bigBossProject.crud;
+package by.it.govor.bigBossProject.java.crud;
 
 
 
-import by.it.govor.bigBossProject.ConnectionCreator;
+import by.it.govor.bigBossProject.java.ConnectionCreator;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

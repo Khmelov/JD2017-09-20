@@ -1,7 +1,5 @@
-package by.it.govor.bigBossProject.crud;
+package by.it.govor.bigBossProject.java.crud;
 
-
-import by.it.govor.bigBossProject.table.User;
 
 import java.sql.SQLException;
 

@@ -1,6 +1,8 @@
-package by.it.govor.bigBossProject.dao;
+package by.it.govor.bigBossProject.java.dao;
 
-import by.it.akhmelev.jd03_03.classwork.connection.ConnectionCreator;
+
+
+import by.it.govor.bigBossProject.java.ConnectionCreator;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
@@ -183,7 +185,7 @@ public class UniversalDAO<TypeBean> {
     private static int executeUpdate(String sql, boolean returnLastID) throws SQLException {
         int result;
         try (Connection connection = ConnectionCreator.getConnection();
-            Statement statement = connection.createStatement()) {
+             Statement statement = connection.createStatement()) {
             result = statement.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
             //получим ID, если это требуется извне.
             if (result>0 && returnLastID) {

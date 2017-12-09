@@ -1,9 +1,9 @@
-package by.it.govor.bigBossProject.dao;
+package by.it.govor.bigBossProject.java.dao;
 
 
-import by.it.govor.bigBossProject.ConnectionCreator;
-import by.it.govor.bigBossProject.crud.ICRUD;
-import by.it.govor.bigBossProject.table.User;
+import by.it.govor.bigBossProject.java.ConnectionCreator;
+import by.it.govor.bigBossProject.java.crud.ICRUD;
+import by.it.govor.bigBossProject.java.table.User;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

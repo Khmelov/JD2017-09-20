@@ -1,7 +1,5 @@
-package by.it.govor.bigBossProject.dao;
+package by.it.govor.bigBossProject.java.dao;
 
-
-import by.it.govor.bigBossProject.table.Role;
 
 public class DAO {
 
