@@ -34,7 +34,6 @@ public class CmdLogin extends AbstractAction{
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
         return null;
     }
