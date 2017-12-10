@@ -13,7 +13,7 @@
             <div class="col-md-4">
                 <input id="login" name="login" type="text"
                        placeholder="" class="form-control input-md" required=""
-                       value="TestLogin">
+                       value="Login">
 
             </div>
         </div>
@@ -25,7 +25,7 @@
             <div class="col-md-4">
                 <input id="password" name="password" type="password" placeholder="" class="form-control input-md"
                        required=""
-                       value="TestPassword">
+                       value="Password">
 
             </div>
         </div>
