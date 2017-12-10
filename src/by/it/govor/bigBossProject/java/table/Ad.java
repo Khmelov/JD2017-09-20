@@ -11,6 +11,10 @@ public class Ad {
     private String HDD;
     private int user_ID;
 
+    public Ad() {
+
+    }
+
     public Ad(String processor, String video_card, String motherboard, String ram, String power_supply, String HDD, int user_ID) {
         this.id = 0;
         this.processor = processor;

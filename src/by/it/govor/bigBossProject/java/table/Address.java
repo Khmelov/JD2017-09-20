@@ -7,6 +7,10 @@ public class Address {
     private String city;
     private int user_ID;
 
+    public Address() {
+
+    }
+
     @Override
     public String toString() {
         return "Address{" +

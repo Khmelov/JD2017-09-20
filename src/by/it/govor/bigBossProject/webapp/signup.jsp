@@ -54,39 +54,35 @@
                              </div>
                          </div>
 
+           <!-- Select Basic -->
+                     <div class="form-group">
+                       <label class="col-md-4 control-label" for="Floors">Country</label>
+                      <div class="col-md-4">
+                       <select id="Floors" name="Floors" class="form-control">
+                        <option value="1">Belarus</option>
+                        <option value="2">Russia</option>
+                           <option value="3">Ukraine</option>
+                           <option selected value="5">Belarus</option>
+                      </select>
+                        </div>
+                     </div>
+                 <!-- Text input-->
 
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Floors">City</label>
              <div class="col-md-4">
-         <div class="Country">
-           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-             Country
-             <span class="caret"></span>
-           </button>
-           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-             <li><a href="#">Russia</a></li>
-             <li><a href="#">Ukraine</a></li>
-             <li><a href="#">Belarus</a></li>
-             <li role="separator" class="divider"></li>
-           </ul>
-         </div>
-         </div>
-
+              <select id="Floors" name="Floors" class="form-control">
+               <option value="1">Minsk</option>
+               <option value="2">Moscow</option>
+                  <option value="3">Kiev</option>
+                  <option selected value="5">Minsk</option>
+             </select>
+               </div>
+            </div>
         <!-- Text input-->
 
-                         <div class="col-md-4">
-                          <label class="col-md-4 control-label" for="submit"></label>
-                <div class="City">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    City
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#"no</a></li>
-                    <li><a href="#">no</a></li>
-                    <li><a href="#">no</a></li>
-                    <li role="separator" class="divider"></li>
-                  </ul>
-                </div>
-                </div>
+
 
       <!-- Button -->
             <div class="form-group">

@@ -6,130 +6,104 @@
 
 <!-- Form Name -->
 <legend>Создать объявление</legend>
+<fieldset>
 
-<!-- Multiple Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="RoomCount-0">Число комнат</label>
-  <div class="col-md-4">
-    <label class="radio-inline" for="RoomCount-0">
-      <input type="radio" name="RoomCount" id="RoomCount-0" value="1" >
-      1
-    </label>
-    <label class="radio-inline" for="RoomCount-1">
-      <input type="radio" name="RoomCount" id="RoomCount-1" value="2" checked="checked">
-      2
-    </label>
-    <label class="radio-inline" for="RoomCount-2">
-      <input type="radio" name="RoomCount" id="RoomCount-2" value="3">
-      3
-    </label>
-    <label class="radio-inline" for="RoomCount-3">
-      <input type="radio" name="RoomCount" id="RoomCount-3" value="4">
-      4
-    </label>
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Address">Адрес</label>
-  <div class="col-md-4">
-  <input id="Address" name="Address" type="text" placeholder="" value="TEST: ул. Ленина, д.1, кв.1" class="form-control input-md" required="">
-  <span class="help-block">укажите адрес</span>
-  </div>
-</div>
-
-<!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Description">Описание</label>
-  <div class="col-md-4">
-    <textarea class="form-control" id="Description" name="Description">TEST: Квартира в самом центре</textarea>
-  </div>
-</div>
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Floor">Выберите этаж</label>
-  <div class="col-md-2">
-    <select id="Floor" name="Floor" class="form-control">
-      <option value="1">1</option>
-      <option selected value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-      <option value="13">13</option>
-      <option value="14">14</option>
-      <option value="15">15</option>
-      <option value="16">16</option>
-      <option value="17">17</option>
-      <option value="18">18</option>
-      <option value="19">19</option>
-      <option value="20">20</option>
-      <option value="21">21</option>
-      <option value="22">22</option>
-      <option value="23">23</option>
-      <option value="24">24</option>
-      <option value="25">25</option>
-    </select>
-  </div>
-</div>
-
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Floors">Сколько всего этажей</label>
-  <div class="col-md-2">
+  <label class="col-md-4 control-label" for="Floors">Процессор</label>
+  <div class="col-md-5">
     <select id="Floors" name="Floors" class="form-control">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option selected value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-      <option value="13">13</option>
-      <option value="14">14</option>
-      <option value="15">15</option>
-      <option value="16">16</option>
-      <option value="17">17</option>
-      <option value="18">18</option>
-      <option value="19">19</option>
-      <option value="20">20</option>
-      <option value="21">21</option>
-      <option value="22">22</option>
-      <option value="23">23</option>
-      <option value="24">24</option>
-      <option value="25">25</option>
+      <option value="1">Intel Core i7-8700K</option>
+      <option value="2">AMD Ryzen 5 1600</option>
+      <option value="3">AMD Ryzen 3 1200</option>
+      <option value="4">AMD Ryzen 7 1700</option>
+      <option selected value="5">Intel Core i5-8400</option>
     </select>
   </div>
 </div>
 
-<!-- Text input-->
+<!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Area">Площадь</label>
-  <div class="col-md-4">
-  <input id="Area" name="Area" type="text" placeholder="" value="45" class="form-control input-md" required="">
-  <span class="help-block">Укажите общую площадь (кв.м.)</span>
+  <label class="col-md-4 control-label" for="Floors">Видеокарта</label>
+  <div class="col-md-5">
+    <select id="Floors" name="Floors" class="form-control">
+      <option value="1">MSI GeForce GTX 1060 Gaming X 6GB GDDR5</option>
+      <option value="2">Palit GeForce GTX 1050 Ti Dual OC 4GB GDDR5 </option>
+      <option value="3">Gigabyte GeForce GTX 1070 Ti Gaming 8GB GDDR5</option>
+      <option value="4">Gigabyte AORUS GeForce GTX 1080 Ti 11GB GDDR5X</option>
+      <option selected value="5">Intel Core i5-8400</option>
+    </select>
   </div>
 </div>
 
-<!-- Text input-->
+<!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Price">Цена</label>
-  <div class="col-md-4">
-  <input id="Price" name="Price" type="text" placeholder="" value="60" class="form-control input-md" required="">
-  <span class="help-block">Укажите цену у.е.</span>
+  <label class="col-md-4 control-label" for="Floors">Видеокарта</label>
+  <div class="col-md-5">
+    <select id="Floors" name="Floors" class="form-control">
+      <option value="1">MSI GeForce GTX 1060 Gaming X 6GB GDDR5</option>
+      <option value="2">Palit GeForce GTX 1050 Ti Dual OC 4GB GDDR5 </option>
+      <option value="3">Gigabyte GeForce GTX 1070 Ti Gaming 8GB GDDR5</option>
+      <option value="4">Gigabyte AORUS GeForce GTX 1080 Ti 11GB GDDR5X</option>
+      <option selected value="5">Gigabyte AORUS GeForce GTX 1080 Ti 11GB GDDR5X/option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Floors">Материнская плата</label>
+  <div class="col-md-5">
+    <select id="Floors" name="Floors" class="form-control">
+      <option value="1">ASRock Z370 Pro4</option>
+      <option value="2">ASUS ROG Strix B350-F Gaming </option>
+      <option value="3">ASUS Prime Z370-A</option>
+      <option value="4">ASRock B250M-HDV</option>
+      <option selected value="5">ASRock Z370 Pro</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Floors">ОЗУ</label>
+  <div class="col-md-5">
+    <select id="Floors" name="Floors" class="form-control">
+      <option value="1">Kingston HyperX FURY 8GB DDR4</option>
+      <option value="2">Kingston HyperX FURY 16GB DDR4 PC4-19200</option>
+      <option value="3">Corsair Vengeance LED 2x16GB DDR4 PC4-24000 </option>
+      <option value="4">Corsair Vengeance 4x16GB DDR4-SODIMM PC4-19200 </option>
+      <option selected value="5">Kingston HyperX FURY 8GB DDR4</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Floors">Блок питания</label>
+  <div class="col-md-5">
+    <select id="Floors" name="Floors" class="form-control">
+      <option value="1">AeroCool Kcas 500W</option>
+      <option value="2">AeroCool Kcas 600W</option>
+      <option value="3">AeroCool Kcas 700W</option>
+      <option value="4">AeroCool Kcas 1200W</option>
+      <option selected value="5">AeroCool Kcas 500W</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Floors">Жесткий диск</label>
+  <div class="col-md-5">
+    <select id="Floors" name="Floors" class="form-control">
+      <option value="1"> 1 Тб 5400об/мин</option>
+      <option value="2">2 Тб 7200об/мин</option>
+      <option value="3">3 Тб 7200об/мин</option>
+      <option value="4">512гб 5400об/мин</option>
+      <option selected value="5">512гб 5400об/мин</option>
+    </select>
   </div>
 </div>
 
@@ -137,10 +111,9 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-success">Готово</button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-success">Зарегистрировать</button>
   </div>
 </div>
-
 </fieldset>
 </form>
 

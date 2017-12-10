@@ -22,7 +22,13 @@ enum Actions {
         {
             this.command = new CmdError();
         }
+    },
+    CREATEAD{
+        {
+            this.command = new CmdCreateAd();
+        }
     };
+
 
 
     ICommand command;
