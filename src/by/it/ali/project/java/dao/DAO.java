@@ -1,4 +1,4 @@
-package by.it.ali.project.dao;
+package by.it.ali.project.java.dao;
 
 public class DAO {
     private static DAO dao; //синглтон для dao

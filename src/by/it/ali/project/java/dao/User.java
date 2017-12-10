@@ -1,4 +1,4 @@
-package by.it.ali.project.dao;
+package by.it.ali.project.java.dao;
 
 public class User {
     private int id;
@@ -6,28 +6,27 @@ public class User {
     private String password;
     private String email;
     private int fk_Roles;
-    private int fk_Roles_additional;
+
 
     public User() {
     }
 
 
-    public User(int id, String login, String password, String email, int fk_Roles, int fk_Roles_additional) {
+    public User(int id, String login, String password, String email, int fk_Roles) {
         this.id = id;
         this.login = login;
         this.password = password;
         this.email = email;
         this.fk_Roles = fk_Roles;
-        this.fk_Roles_additional = fk_Roles_additional;
+
     }
 
-    public User(String login, String password, String email, int fk_Roles, int fk_Roles_additional) {
+    public User(String login, String password, String email, int fk_Roles) {
         this.id = 0;
         this.login = login;
         this.password = password;
         this.email = email;
         this.fk_Roles = fk_Roles;
-        this.fk_Roles_additional = fk_Roles_additional;
     }
 
     public int getId() {
@@ -70,11 +69,6 @@ public class User {
         this.fk_Roles = fk_Roles;
     }
 
-    public int getFk_Roles_additional() {
-        return fk_Roles_additional;
-    }
-
-    public void setFk_Roles_additional(int fk_Roles_additional) { this.fk_Roles = fk_Roles_additional; }
 
     @Override
     public String toString() {
@@ -82,8 +76,7 @@ public class User {
                 "id=" + id +
                 ", login='" + login + '\'' +
                 ", email='" + email + '\'' +
-                ", fk_Roles='" + fk_Roles + '\'' +
-                ", fk_Roles_additional=" + fk_Roles_additional +
+                ", fk_Roles='" + fk_Roles + '\''+
                 '}';
     }
 }

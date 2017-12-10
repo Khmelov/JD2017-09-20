@@ -3,14 +3,14 @@ package by.it.ali.project.java.controller;
 import javax.servlet.http.HttpServletRequest;
 
 class ActionFactory {
-
-ICommand getCommand(HttpServletRequest req)
-{
-    String strCommand=req.getParameter("command").toUpperCase();
-    try{Actions tmp=Actions.valueOf(strCommand);
-    return tmp.command;}
-    catch (IllegalArgumentException e){
-        return Actions.ERROR.command;
+    ICommand getCommand(HttpServletRequest req) {
+        String strCommand = req.getParameter("command");
+        if (strCommand == null) strCommand = "index";
+        try {
+            Actions tmp = Actions.valueOf(strCommand.toUpperCase());
+            return tmp.command;
+        } catch (IllegalArgumentException e) {
+            return Actions.ERROR.command;
+        }
     }
-}
 }

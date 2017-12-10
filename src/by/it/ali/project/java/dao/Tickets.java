@@ -1,4 +1,4 @@
-package by.it.ali.project.dao;
+package by.it.ali.project.java.dao;
 
 public class Tickets {
     private int id;
@@ -73,6 +73,9 @@ public class Tickets {
 
     public int getPrice() {
         return Price;
+    }
+    public void setPrice(int Price) {
+        this.Price = Price;
     }
 
     public void Price(int Price) {

@@ -8,18 +8,18 @@ public abstract class AbstractDAO {
     static final String USER_DB = "root";
     static final String PASSWORD_DB = "";
     /** return id or -1 (fail)*/
-//    int executeCreate(String sql) throws SQLException {
-//        int result=-1;
-//        try (Connection connection= ConnectionCreator.getConnection();
-//             Statement statement=connection.createStatement();){
-//            if (statement.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS)==1){
-//                ResultSet keys=statement.getGeneratedKeys();
-//                keys.next();
-//                result=keys.getInt(1);
-//            }
-//        }
-//        return result;
-//    }
+    int executeCreate(String sql) throws SQLException {
+        int result=-1;
+        try (Connection connection= DriverManager.getConnection(URL_DB, USER_DB, PASSWORD_DB);
+             Statement statement=connection.createStatement();){
+            if (statement.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS)==1){
+                ResultSet keys=statement.getGeneratedKeys();
+                keys.next();
+                result=keys.getInt(1);
+            }
+        }
+        return result;
+    }
 
     int executeUpdate(String sql) throws SQLException {
         int result=-1;

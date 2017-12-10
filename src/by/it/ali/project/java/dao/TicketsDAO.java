@@ -1,4 +1,4 @@
-package by.it.ali.project.dao;
+package by.it.ali.project.java.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -8,6 +8,13 @@ public class TicketsDAO extends AbstractDAO implements InDAO<Tickets> {
     private static final String URL_DB = "jdbc:mysql://127.0.0.1:2016/ali";
     private static final String USER_DB = "root";
     private static final String PASSWORD_DB = "";
+    static {
+        try { //регистрируем драйвер
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public List<Tickets> getAll(String WhereAndOreder) throws SQLException {

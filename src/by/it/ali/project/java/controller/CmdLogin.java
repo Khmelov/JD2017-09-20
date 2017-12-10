@@ -1,7 +1,7 @@
 package by.it.ali.project.java.controller;
 
 //import by.it.ali.project.java.controller.*;
-import by.it.ali.project.dao.*;
+import by.it.ali.project.java.dao.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -22,19 +22,18 @@ public class CmdLogin extends AbstractAction{
                                 user.getLogin(),
                                 user.getPassword())
                 );
-//                if (users.size()==1){
-//                    user=users.get(0);
-//                    HttpSession session=req.getSession();
-//                    session.setAttribute("user",user);
-//                    return Actions.PROFILE.command;
-//                } else {
-//                    req.setAttribute(Messages.ERROR,"User: "+user.getLogin()+" not found");
-//                }
+                if (users.size()==1){
+                    user=users.get(0);
+                    HttpSession session=req.getSession();
+                    session.setAttribute("user",user);
+                    return Actions.PROFILE.command;
+                } else {
+                    req.setAttribute(Messages.ERROR,"User: "+user.getLogin()+" not found");
+                }
                 /* TODO session */
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
         return null;
     }

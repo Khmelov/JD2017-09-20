@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +44,9 @@
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="do?command=Login">Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="do?command=Profile">Profile</a>
                   </li>
               </ul>
           </div>

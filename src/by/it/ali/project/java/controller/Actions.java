@@ -2,11 +2,11 @@ package by.it.ali.project.java.controller;
 
 
 public enum Actions {
-//    INDEX {
-//        {
-//            this.command = new CmdIndex();
-//        }
-//    },
+    INDEX {
+        {
+            this.command = new CmdIndex();
+        }
+    },
     LOGIN {
         {
             this.command = new CmdLogin();
@@ -17,11 +17,11 @@ public enum Actions {
             this.command = new CmdSignup();
         }
     },
-//    PROFILE{
-//        {
-//            this.command = new CmdProfile();
-//        }
-//    },
+    PROFILE{
+        {
+            this.command = new CmdProfile();
+        }
+    },
 //    RESETDB{
 //        {
 //            this.command = new CmdResetDB();
