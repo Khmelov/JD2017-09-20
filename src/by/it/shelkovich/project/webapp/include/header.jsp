@@ -32,7 +32,6 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="${pageContext.request.contextPath}/?command=manage">Администрировать</a></li>
         <li><a href="${pageContext.request.contextPath}/?command=publish">Создать публикацию</a></li>
         <li><a href="${pageContext.request.contextPath}/?command=resetDB">Обнулить БД</a></li>
 
@@ -46,6 +45,7 @@
                 <li><a href="${pageContext.request.contextPath}/?command=register">Регистрация</a></li>
             </c:when>
             <c:otherwise>
+                <li><a href="${pageContext.request.contextPath}/?command=profile">Личный кабинет</a></li>
                 <li><a href="${pageContext.request.contextPath}/?command=logout">Выйти</a></li>
             </c:otherwise>
         </c:choose>

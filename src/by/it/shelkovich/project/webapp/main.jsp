@@ -1,7 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/header.jsp" %>
 
-
+<c:if test="${user != null}">
+    <h4>Вы вошли как ${user.getUsername()}</h4>
+</c:if>
 <div class="row">
 
     <c:forEach var="post" items="${mpData}">

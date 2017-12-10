@@ -19,13 +19,20 @@ public class CmdRegister extends AbstractAction{
                 User user = new User();
                 user.setUsername(RequestUtils.validate(request.getParameter("username"), ValidatePatterns.USERNAME));
                 user.setPassHash(Hash.md5(request.getParameter("password")));
-                user.setEmail("");
+                user.setEmail(RequestUtils.validate(request.getParameter("email"), ValidatePatterns.EMAIL));
 
+                String checkbox = request.getParameter("showPersonalData");
+                if ("1".equals(checkbox)) user.setShowPersonalData(true);
+                else user.setShowPersonalData(false);
 
-                List<User> users = dao.userDAO.read(user);
-                if(users.size()==0) return Actions.ERROR.command;
+                user.setDescription(RequestUtils.validate(request.getParameter("description"), ValidatePatterns.DESCRIPTION));
+                user.setName(RequestUtils.validate(request.getParameter("name"), ValidatePatterns.NAME));
+                user.setSurname(RequestUtils.validate(request.getParameter("surname"), ValidatePatterns.SURNAME));
+                user.setRole_id(3L);
+
+                dao.userDAO.create(user);
                 HttpSession session = request.getSession();
-                session.setAttribute("user", users.get(0));
+                session.setAttribute("user", user);
                 return Actions.MAIN.command;
             } catch (Exception e) {
                 e.printStackTrace();

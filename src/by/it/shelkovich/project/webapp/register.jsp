@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/header.jsp" %>
 
-<form class="form-horizontal">
+<form class="form-horizontal" action="${pageContext.request.contextPath}/?command=register" method="POST">
 <fieldset>
 
 <!-- Form Name -->

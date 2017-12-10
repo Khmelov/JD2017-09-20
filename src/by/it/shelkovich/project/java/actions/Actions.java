@@ -21,9 +21,9 @@ public enum Actions {
             command = new CmdError();
         }
     },
-    MANAGE{
+    PROFILE{
         {
-            command = new CmdManage();
+            command = new CmdProfile();
         }
     },
     PUBLISH{

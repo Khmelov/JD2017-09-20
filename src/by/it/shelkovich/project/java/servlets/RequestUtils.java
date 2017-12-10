@@ -8,6 +8,7 @@ public class RequestUtils {
     }
 
     static public String validate(String param, String pattern) throws SecurityException{
+        if (param == null) return null;
         if(param.matches(pattern)){
             return param;
         }else throw new SecurityException("Incorrect value: " + param);
