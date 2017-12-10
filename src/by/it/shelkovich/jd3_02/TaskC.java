@@ -1,6 +1,6 @@
 package by.it.shelkovich.jd3_02;
 
-import by.it.shelkovich.jd2_10.bean.Payment;
+
 import by.it.shelkovich.jd3_01.DataBase;
 import by.it.shelkovich.jd3_03.dao.DAO;
 import by.it.shelkovich.jd3_03.dao.entities.*;
