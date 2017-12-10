@@ -40,7 +40,6 @@ public class CmdAdmUsers extends AbstractAction {
                 try {
                     userForm.setId(MyRequest.getInt(req, "id"));
                     userForm.setRoleId(MyRequest.getInt(req, "roleId"));
-                    req.setAttribute(Messages.MESSAGE, "*******");
                     if (req.getParameter("update") != null)
                         dao.user.update(userForm);
                     if (req.getParameter("delete") != null)
