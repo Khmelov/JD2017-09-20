@@ -12,6 +12,18 @@ public class MyRequest {
         throw new ParseException("incorrect value " + value, 0);
     }
 
+    public static int getInt(HttpServletRequest req, String name) throws ParseException{
+        return Integer.parseInt(req.getParameter(name));
+    }
+
+    public static float getFloat(HttpServletRequest req, String name) throws ParseException{
+        return Float.parseFloat(req.getParameter(name));
+    }
+
+    public static double getDouble(HttpServletRequest req, String name) throws ParseException{
+        return Double.parseDouble(req.getParameter(name));
+    }
+
     public static boolean isPost(HttpServletRequest req) {
         return req
                 .getMethod()

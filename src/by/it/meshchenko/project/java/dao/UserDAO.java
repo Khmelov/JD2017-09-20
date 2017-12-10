@@ -44,14 +44,33 @@ public class UserDAO extends AbstractDAO implements IDAO<User> {
     public boolean update(User item) {
         String sql = String.format(
                 "UPDATE crm_users SET " +
-                        "Name = '%s', Password = '%s',%s Email = '%s', " +
-                        "EmailConfirmed = %d%s WHERE Id = %d",
-                item.getName(),
-                item.getPassword(),
-                item.getPhoneNumber() == null ? "" : "PhoneNumber=\'" + item.getPhoneNumber() + "\',",
-                item.getEmail(),
-                item.isEmailConfirmed() ? 1 : 0,
-                item.getRoleId() == null ? "" : ",RoleId=" + item.getRoleId().toString(),
+                        "%s%s%s%s%s%s%s%s%s%s%s WHERE Id = %d",
+                item.getName() == null ? "" : "Name=\'" + item.getName() + "\'",
+                (item.getName() != null &&
+                        (item.getPassword() != null
+                                || item.getPhoneNumber() != null
+                                || item.getEmail() != null
+                                || item.isEmailConfirmed()
+                                || item.getRoleId() != null)) ? "," : "",
+                item.getPassword() == null ? "" : "sPassword=\'" + item.getPassword() + "\'",
+                (item.getPassword() != null &&
+                        (item.getPhoneNumber() != null
+                                || item.getEmail() != null
+                                || item.isEmailConfirmed()
+                                || item.getRoleId() != null)) ? "," : "",
+                item.getPhoneNumber() == null ? "" : "PhoneNumber=\'" + item.getPhoneNumber() + "\'",
+                (item.getPhoneNumber() != null &&
+                        (item.getEmail() != null
+                                || item.isEmailConfirmed()
+                                || item.getRoleId() != null)) ? "," : "",
+                item.getEmail() == null ? "" : "Email=\'" + item.getEmail() + "\'",
+                (item.getEmail() != null &&
+                        (item.isEmailConfirmed()
+                                || item.getRoleId() != null)) ? "," : "",
+                item.isEmailConfirmed() ? "EmailConfirmed=1" : "",
+                (item.isEmailConfirmed() &&
+                        item.getRoleId() != null) ? "," : "",
+                item.getRoleId() == null ? "" : "RoleId=" + item.getRoleId().toString(),
                 item.getId()
         );
         return executeUpdate(sql);

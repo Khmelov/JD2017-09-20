@@ -5,6 +5,7 @@ import by.it.meshchenko.project.java.beans.View.Admin.AdmUsersView;
 import by.it.meshchenko.project.java.bll.Admin.ConstructorAdmUsersView;
 import by.it.meshchenko.project.java.controller.*;
 import by.it.meshchenko.project.java.dao.DAO;
+import jdk.nashorn.internal.runtime.ParserException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,6 +36,18 @@ public class CmdAdmUsers extends AbstractAction {
 
             // POST
             if (MyRequest.isPost(req)){
+                User userForm = new User();
+                try {
+                    userForm.setId(MyRequest.getInt(req, "id"));
+                    userForm.setRoleId(MyRequest.getInt(req, "roleId"));
+                    req.setAttribute(Messages.MESSAGE, "*******");
+                    if (req.getParameter("update") != null)
+                        dao.user.update(userForm);
+                    if (req.getParameter("delete") != null)
+                        dao.user.delete(userForm);
+                } catch (Exception e) {
+                    req.setAttribute(Messages.ERROR, e.getMessage());
+                }
                 return Actions.ADMUSERS.command;
             }
             // GET

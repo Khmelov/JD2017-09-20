@@ -5,4 +5,5 @@ public interface Patterns {
     String UserPASSWORD="[A-Za-z_0-9]{4,31}";
     String UserEMAIL="([A-Za-z_0-9]{2,31})@([A-Za-z_]{2,9})(\\.)([A-Za-z_]{1,5})";
     String UserPHONE ="\\+?[0-9]{4,15}";
+    String INTEGER ="[0-9]{1,}";
 }
