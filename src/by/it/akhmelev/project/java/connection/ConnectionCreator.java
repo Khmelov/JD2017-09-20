@@ -1,5 +1,8 @@
 package by.it.akhmelev.project.java.connection;
 
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,6 +29,17 @@ public class ConnectionCreator {
                     ""
             );
         return connection;
+    }
+
+    public static Connection getConnectionPool() {
+        try {
+            InitialContext ic = new InitialContext();
+            DataSource ds = (DataSource) ic.lookup("java:/comp/env/jdbc/my_sql_akhmelev");
+            return ds.getConnection();
+        } catch (SQLException | NamingException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public static void main(String[] args) throws SQLException {
