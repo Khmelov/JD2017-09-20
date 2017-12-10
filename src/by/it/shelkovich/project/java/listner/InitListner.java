@@ -13,7 +13,7 @@ public class InitListner implements ServletContextListener {
         //ResultSet rs = DataBase.exeSelectQuery("SELECT * FROM users");
         //if (rs == null){
             System.out.println("try to init DB");
-            DataBase.initDataBase(servletContextEvent.getServletContext().getResourceAsStream("/resources/shelkovich.sql"));
+            DataBase.initDataBase(servletContextEvent.getServletContext().getResourceAsStream("/resources/sql/shelkovich.sql"));
 
         //}
     }
