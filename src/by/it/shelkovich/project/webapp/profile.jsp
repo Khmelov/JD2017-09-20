@@ -22,7 +22,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="password">Пароль</label>
       <div class="col-md-4">
-        <input id="password" name="password" type="password" placeholder="" class="form-control input-md" required="">
+        <input id="password" name="password" type="password" placeholder="" class="form-control input-md">
         <span class="help-block">минимум 6 символов</span>
       </div>
     </div>

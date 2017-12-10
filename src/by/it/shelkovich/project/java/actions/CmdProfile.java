@@ -19,24 +19,36 @@ public class CmdProfile extends AbstractAction {
                 User sessionUser = (User)request.getSession().getAttribute("user");
                 User user = new User();
                 user.setId(sessionUser.getId());
-                user.setRole_id(sessionUser.getRole_id());
 
-                user.setUsername(RequestUtils.validate(request.getParameter("username"), ValidatePatterns.USERNAME));
-                user.setPassHash(Hash.md5(request.getParameter("password")));
-                user.setEmail(RequestUtils.validate(request.getParameter("email"), ValidatePatterns.EMAIL));
+                if (request.getParameter("delete") != null){
+                    dao.userDAO.delete(sessionUser.getId());
+                    request.getSession().setAttribute("user", null);
+                    return Actions.MAIN.command;
+                }
 
-                String checkbox = request.getParameter("showPersonalData");
-                if ("1".equals(checkbox)) user.setShowPersonalData(true);
-                else user.setShowPersonalData(false);
+                if (request.getParameter("update") != null) {
+                    user.setRole_id(sessionUser.getRole_id());
+                    user.setUsername(RequestUtils.validate(request.getParameter("username"), ValidatePatterns.USERNAME));
 
-                user.setDescription(RequestUtils.validate(request.getParameter("description"), ValidatePatterns.DESCRIPTION));
-                user.setName(RequestUtils.validate(request.getParameter("name"), ValidatePatterns.NAME));
-                user.setSurname(RequestUtils.validate(request.getParameter("surname"), ValidatePatterns.SURNAME));
+                    String password = request.getParameter("password");
+                    if (password == null) user.setPassHash(sessionUser.getPassHash());
+                    else user.setPassHash(Hash.md5(password));
+
+                    user.setEmail(RequestUtils.validate(request.getParameter("email"), ValidatePatterns.EMAIL));
+
+                    String checkbox = request.getParameter("showPersonalData");
+                    if ("1".equals(checkbox)) user.setShowPersonalData(true);
+                    else user.setShowPersonalData(false);
+
+                    user.setDescription(RequestUtils.validate(request.getParameter("description"), ValidatePatterns.DESCRIPTION));
+                    user.setName(RequestUtils.validate(request.getParameter("name"), ValidatePatterns.NAME));
+                    user.setSurname(RequestUtils.validate(request.getParameter("surname"), ValidatePatterns.SURNAME));
 
 
-                dao.userDAO.update(user);
-                HttpSession session = request.getSession();
-                session.setAttribute("user", user);
+                    dao.userDAO.update(user);
+                    HttpSession session = request.getSession();
+                    session.setAttribute("user", user);
+                }
                 return null;
             } catch (Exception e) {
                 e.printStackTrace();
