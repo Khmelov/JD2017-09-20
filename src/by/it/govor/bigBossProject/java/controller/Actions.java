@@ -23,6 +23,11 @@ enum Actions {
             this.command = new CmdError();
         }
     },
+    EDITUSERS {
+        {
+            this.command = new CmdEditUsers();
+        }
+    },
     CREATEAD{
         {
             this.command = new CmdCreateAd();

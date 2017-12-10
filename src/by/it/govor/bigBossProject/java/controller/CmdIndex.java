@@ -14,7 +14,7 @@ class CmdIndex extends AbstractAction {
         try {
             req.setAttribute(
                     "ad",
-                    DAO.getInstanceAd().ad.getRead("")
+                    DAO.getInstanceAd().ad.getRead("*")
             );
         } catch (SQLException e) {
             e.printStackTrace();

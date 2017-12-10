@@ -37,6 +37,8 @@
                     <a class="nav-link" target="_blank" href="http://localhost:2080/phpmyadmin/">PHP MyAdmin</a>
                 </li>
             </ul>
+             <c:choose>
+              <c:when test="${user==null}">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
                     <a class="nav-link" href="do?command=SignUp">Signup</a>
@@ -44,10 +46,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="do?command=Login">Login</a>
                 </li>
+                </c:when>
+                <c:when test2="${user!=null}">
                 <li class="nav-item">
                     <a class="nav-link" href="do?command=Logout">Profile</a>
                 </li>
-
+              </c:when>
+              </c:choose>
             </ul>
         </div>
     </nav>
