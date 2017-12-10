@@ -6,21 +6,24 @@ body {
 }
 .mycontainer{
 	margin-top: 10px;
-	min-height: 97%;
 	color: #003360;
 	background-color: rgba(244, 244, 244, 1);
 }
 .tab-content{
 	min-height: 550px;
+	margin-top: 5px;
 }
 .navbar{
 	font-size: 14px;
 }
 .navbar-brand{
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 38px;
 	padding: 5px 15px;
-
+}
+.navbar-text {
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 .nav>li>a {
     padding-top: 2px;
@@ -41,10 +44,6 @@ body {
 .nav > li > a {
 	padding: 5px 10px;
 }
-.mycontainer1{
-	max-width: 1200px;
-	height: inherit;
-}
 .login{
 	max-width: 1200px;
 	height: 330px;
@@ -58,30 +57,23 @@ body {
 	height: 330px;
 }
 .pageName{
-	font-size: 20px;
+	font-size: 18px;
 	padding-right: 30px;
-}
-#map {
-    min-height: 400px;
 }
 .margin-bottom-8{
 	margin-bottom: 8px;
 }
-footer {
-    padding: 30px 0;
+p{
+    margin: 0 0 4px;
 }
-
-.progress{
-	margin-bottom: 5px;
+.row {
+    margin-left: -5px;
+    margin-right: -5px;
 }
-.modal-dialog{
-		width: 380px;
-		margin: 30px auto;
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-left: 5px;
+    padding-right: 5px;
 }
-.nbDocks {
-	/*max-width: 20px;*/
-	opacity: 0.5;
-}
-.nbDockName, .nbBikes, .emptyDocks {
-	display: inline-bloack;
+.form-group {
+    margin-bottom: 5px;
 }

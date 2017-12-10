@@ -49,19 +49,18 @@ public class AddressDAO extends AbstractDAO implements IDAO<Address> {
     @Override
     public boolean delete(Address item) {
         String sql = String.format(
-                "DELETE FROM crm_users WHERE Id = %d", item.getId());
+                "DELETE FROM addr_addresses WHERE Id = %d", item.getId());
         return executeUpdate(sql);
     }
 
     @Override
     public List<Address> getAll(String WhereAndOrder) {
         List<Address> items = new ArrayList<>();
-        String sql = "SELECT * FROM crm_users " + WhereAndOrder + " ;";
+        String sql = "SELECT * FROM addr_addresses " + WhereAndOrder + " ;";
         try (Connection connection = ConnectionCreator.getConnection();
              Statement statement = connection.createStatement()
         ) {
             ResultSet rs = statement.executeQuery(sql);
-            Object tempObj;
             while (rs.next()) {
                 Address item = new Address();
 

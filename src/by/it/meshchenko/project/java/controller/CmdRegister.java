@@ -10,11 +10,16 @@ import java.util.List;
 
 public class CmdRegister extends AbstractAction {
 
-    private String _jsp = "/na_registerPartial.jsp";
+    private String _jsp = Pages.register;
+    private String _cmd = Pages.cmdregister;
 
     @Override
     public String jsp(){
         return _jsp;
+    }
+    @Override
+    public String cmd(){
+        return _cmd;
     }
 
     @Override
@@ -36,7 +41,7 @@ public class CmdRegister extends AbstractAction {
                     if(dao.user.create(user)) {
                         HttpSession session=req.getSession();
                         session.setAttribute("user",user);
-                        return Actions.HOME.command;
+                        return Actions.LEASE.command;
                     }
                 }
                 else if (temp.size() == 1){

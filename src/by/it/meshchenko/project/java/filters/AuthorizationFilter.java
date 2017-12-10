@@ -1,6 +1,7 @@
 package by.it.meshchenko.project.java.filters;
 
 import by.it.meshchenko.project.java.beans.User;
+import by.it.meshchenko.project.java.controller.Messages;
 import by.it.meshchenko.project.java.controller.Pages;
 import by.it.meshchenko.project.java.controller.Utils;
 
@@ -42,11 +43,11 @@ public class AuthorizationFilter implements Filter {
             String url = req.getRequestURI() + (req.getQueryString() == null ? "" : "?" + req.getQueryString());
             String page = url.substring(url.lastIndexOf("/")+1, url.length());
 
-            int role = user.getRoleId();
+
+            int role = user.getRoleId() == null ? -1 : user.getRoleId();
             boolean pageAuthorizAdmin = Pages.AUTHORIZATIONAdmin.contains(page);
             boolean pageAuthorizManager = Pages.AUTHORIZATIONManager.contains(page);
             //boolean pageAuthorizUser = Pages.AUTHORIZATIONUser.contains(page);
-
             if (pageAuthorizAdmin) {
                 if(role == 1){
                     filterChain.doFilter(request, response);
