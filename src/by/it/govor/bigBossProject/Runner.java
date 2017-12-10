@@ -1,11 +1,11 @@
 package by.it.govor.bigBossProject;
 
 
-import by.it.govor.bigBossProject.dao.DAO;
-import by.it.govor.bigBossProject.table.Ad;
-import by.it.govor.bigBossProject.table.Address;
-import by.it.govor.bigBossProject.table.Role;
-import by.it.govor.bigBossProject.table.User;
+import by.it.govor.bigBossProject.java.dao.DAO;
+import by.it.govor.bigBossProject.java.table.Ad;
+import by.it.govor.bigBossProject.java.table.Address;
+import by.it.govor.bigBossProject.java.table.Role;
+import by.it.govor.bigBossProject.java.table.User;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -39,7 +39,8 @@ public class Runner {
 
 
 
-   //  User
+        //  User
+    //---------------------------------------------------------------------------------------
        dao=DAO.getInstanceUser();
      User user=new User("Login1","pass","name","nick",243,1);
         showUser("1");
