@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<usersJ>
+    <users>
+        <id>2</id>
+        <login>user</login>
+        <password>puser</password>
+        <email>user@it.by</email>
+        <roles_Id>4</roles_Id>
+    </users>
+    <users>
+        <id>3</id>
+        <login>user2</login>
+        <password>puser2</password>
+        <email>user2@it.by</email>
+        <roles_Id>4</roles_Id>
+    </users>
+    <users>
+        <id>4</id>
+        <login>testAdmin</login>
+        <password>admin2</password>
+        <email>admin2@gmail.com</email>
+        <roles_Id>1</roles_Id>
+    </users>
+    <users>
+        <id>5</id>
+        <login>moderator</login>
+        <password>moder</password>
+        <email>moderator@gmail.com</email>
+        <roles_Id>3</roles_Id>
+    </users>
+</usersJ>
