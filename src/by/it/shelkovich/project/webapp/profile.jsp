@@ -82,6 +82,8 @@
       </div>
     </div>
 
+    <input id="id" name="id" type="hidden" value="${user.getId()}">
+
     </fieldset>
     </form>
 
