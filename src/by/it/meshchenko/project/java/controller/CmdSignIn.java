@@ -10,11 +10,16 @@ import java.util.List;
 
 public class CmdSignIn  extends AbstractAction {
 
-    private String _jsp = "/na_signinPartial.jsp";
+    private String _jsp = Pages.signin;
+    private String _cmd = Pages.cmdsignin;
 
     @Override
     public String jsp(){
         return _jsp;
+    }
+    @Override
+    public String cmd(){
+        return _cmd;
     }
 
     @Override
@@ -32,9 +37,10 @@ public class CmdSignIn  extends AbstractAction {
                 if(temp.size() == 1){
                     // password is right
                     if(temp.get(0).getPassword().compareTo(user.getPassword()) == 0){
+                        user = temp.get(0);
                         HttpSession session=req.getSession();
                         session.setAttribute("user",user);
-                        return Actions.HOME.command;
+                        return Actions.LEASE.command;
                     }
                     else {
                         req.setAttribute(Messages.MESSAGE, "Incorrect password ");

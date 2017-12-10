@@ -1,11 +1,6 @@
 package by.it.meshchenko.jd03_01;
 
-import by.it.ali.calculator.Str;
-import com.mysql.fabric.jdbc.FabricMySQLDriver;
-
 import java.sql.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class B_ShowUsers {
     public static void main(String[] args) {

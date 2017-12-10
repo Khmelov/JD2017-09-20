@@ -5,22 +5,21 @@ import by.it.meshchenko.project.java.beans.User;
 import by.it.meshchenko.project.java.dao.DB;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.SQLException;
 
 
 public class CmdResetDB extends AbstractAction {
 
-    private String _jsp = "/resetdb.jsp";
+    private String _jsp = Pages.resetdb;
+    private String _cmd = Pages.cmdresetdb;
 
     @Override
     public String jsp(){
         return _jsp;
     }
-
-//    public static void main(String[] args) throws SQLException{
-//        DB.reset();
-//    }
-
+    @Override
+    public String cmd(){
+        return _cmd;
+    }
 
     @Override
     public ICommand execute(HttpServletRequest req, HttpServletResponse resp) {
@@ -29,14 +28,12 @@ public class CmdResetDB extends AbstractAction {
             try {
                 DB.reset();
                 req.setAttribute(Messages.MESSAGE, "db reset");
-                if(user == null) {
-                    return Actions.INDEX.command;
+                if(user.getPassword().compareTo("admin@admin.com") == 0) {
+                    return Actions.LEASE.command;
                 }
                 else {
-                    return Actions.HOME.command;
+                    return Actions.INDEX.command;
                 }
-
-
             } catch (Exception e) {
                 req.getServletContext().log(e.getMessage());
                 System.out.println(e.getMessage());

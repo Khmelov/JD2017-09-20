@@ -28,15 +28,7 @@ public class FrontController extends HttpServlet {
             disp.include(req, resp);
         }
         else {
-            resp.sendRedirect(nextAction.getJsp());
-
+            resp.sendRedirect(nextAction.getCmd());
         }
     }
 }
-//
-//<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-//<div class="container mycontainer">
-//        Lease rooms in shopping centers
-//</div>
-//
-//</nav>

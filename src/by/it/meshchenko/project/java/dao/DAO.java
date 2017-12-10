@@ -1,7 +1,5 @@
 package by.it.meshchenko.project.java.dao;
 
-import by.it.meshchenko.project.java.beans.Role;
-
 public class DAO {
 
     private static DAO dao;

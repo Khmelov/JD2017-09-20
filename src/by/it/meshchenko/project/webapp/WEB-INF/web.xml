@@ -7,32 +7,9 @@
     <!--
     Для любого сервлета нужно определить два тега servlet и servlet-mapping.
     Важно чтобы внутри каждого из этих тегов были теги servlet-name
-    и имя сервлета в них было одинаковым!!! Здесь это имя HelloWeb
+    и имя сервлета в них было одинаковым!!!
+    Подключим сервлет-контроллер с именем FrontControllerServlet
     -->
-    <!--
-    <servlet>
-        <servlet-name>HelloWeb</servlet-name>
-        <servlet-class>by.it.meshchenko.jd03_04.java.HelloWorld</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HelloWeb</servlet-name>
-        <url-pattern>/hello</url-pattern>
-    </servlet-mapping>
-    -->
-    <!--
-    Подключим точно так же второй сервлета-контроллер с именем FrontControllerServlet
-    -->
-    <!--
-    <servlet>
-        <servlet-name>FrontControllerServlet</servlet-name>
-        <servlet-class>by.it.meshchenko.jd03_04.java.sample_controller.FrontController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>FrontControllerServlet</servlet-name>
-        <url-pattern>/do</url-pattern>
-    </servlet-mapping>
-    -->
-
     <servlet>
         <servlet-name>FrontControllerServlet</servlet-name>
         <servlet-class>by.it.meshchenko.project.java.controller.FrontController</servlet-class>
@@ -42,6 +19,19 @@
         <url-pattern>/do</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>EncodingPageFilter</filter-name>
+        <filter-class>by.it.meshchenko.project.java.filters.EncodingPageFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncodingPageFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
     <filter>
         <filter-name>AuthenticationFilter</filter-name>
@@ -73,20 +63,6 @@
 
     <filter-mapping>
         <filter-name>AuthorizationFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-    <filter>
-        <filter-name>EncodingPageFilter</filter-name>
-        <filter-class>by.it.meshchenko.project.java.filters.EncodingPageFilter</filter-class>
-        <init-param>
-            <param-name>encoding</param-name>
-            <param-value>UTF-8</param-value>
-        </init-param>
-    </filter>
-
-    <filter-mapping>
-        <filter-name>EncodingPageFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 

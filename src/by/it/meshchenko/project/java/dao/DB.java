@@ -4,10 +4,7 @@ import by.it.meshchenko.project.java.connection.*;
 import by.it.meshchenko.project.java.beans.*;
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class DB {
     public static void reset() throws SQLException {
@@ -235,9 +232,9 @@ public class DB {
                 "admin@admin.com",false, roleAdmin.getId());
         dao.user.create(user);
 
-        user = new User(0,"Manager","123456789",null,
+        User userManager = new User(0,"Manager","123456789","+375295303445",
                 "manager@manager.com",false, roleManager.getId());
-        dao.user.create(user);
+        dao.user.create(userManager);
 
         user = new User(0,"user1","123456789",null,
                 "user1@gmail.com",false, roleUser.getId());
@@ -288,14 +285,35 @@ public class DB {
         // ls_rooms - добавляем помещения
         Room room = new Room(0, "A24", 524.6f, shoppingCenter1.getId());
         dao.room.create(room);
+        dao.leaseRoom.create(new LeaseRoom(0, 555f,
+                new Date(new java.util.Date().getTime()),
+                null,
+                room.getId(),
+                userManager.getId()));
 
         room = new Room(0, "B67", 324.4f, shoppingCenter1.getId());
         dao.room.create(room);
+        dao.leaseRoom.create(new LeaseRoom(0, 450f,
+                null,
+                null,
+                room.getId(),
+                userManager.getId()));
 
         room = new Room(0, "C31", 724.4f, shoppingCenter2.getId());
         dao.room.create(room);
+        dao.leaseRoom.create(new LeaseRoom(0, 1500f,
+                null,
+                null,
+                room.getId(),
+                userManager.getId()));
 
         room = new Room(0, "D15", 224.4f, shoppingCenter2.getId());
         dao.room.create(room);
+        dao.leaseRoom.create(new LeaseRoom(0, 300f,
+                null,
+                null,
+                room.getId(),
+                userManager.getId()));
+
     }
 }
