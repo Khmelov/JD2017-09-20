@@ -15,7 +15,7 @@ import java.sql.SQLException;
 
 @WebServlet(name = "FrontController",
         urlPatterns = {
-        "/do",""
+        "/do","."
 })
 public class FrontController extends HttpServlet{
 
@@ -29,8 +29,6 @@ public class FrontController extends HttpServlet{
         }
 
     }
-
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

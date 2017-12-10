@@ -12,7 +12,7 @@
     <servlet-mapping>
         <servlet-name>FrontControllerServlet</servlet-name>
         <url-pattern>/do</url-pattern>
-        <url-pattern></url-pattern>
+        <url-pattern>.</url-pattern>
     </servlet-mapping>
 
 
@@ -44,6 +44,5 @@
     <listener>
         <listener-class>by.it.akhmelev.project.java.filters.SessionAttributeListener</listener-class>
     </listener>
-
 
 </web-app>
