@@ -148,7 +148,7 @@ public class Ad {
                 ", price=" + price +
                 ", area=" + area +
                 ", description='" + description + '\'' +
-                ", Address='" + address + '\'' +
+                ", address='" + address + '\'' +
                 ", fk_users=" + fk_users +
                 "}";
     }

@@ -7,14 +7,15 @@
     <!--
     Для любого сервлета нужно определить два тега servlet и servlet-mapping.
     Важно чтобы внутри каждого из этих тегов были теги servlet-name
-    и имя сервлета в них было одинаковым!!! Здесь это имя FrontController
+    и имя сервлета в них было одинаковым!!! Здесь это имя HelloWeb
     -->
     <servlet>
-        <servlet-name>FrontController</servlet-name>
+        <servlet-name>HelloWeb</servlet-name>
         <servlet-class>by.it.akhmelev.jd03_04.java.HelloWorld</servlet-class>
     </servlet>
+
     <servlet-mapping>
-        <servlet-name>FrontController</servlet-name>
+        <servlet-name>HelloWeb</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 

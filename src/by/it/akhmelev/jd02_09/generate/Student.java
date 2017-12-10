@@ -21,19 +21,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for User complex type.
+ * <p>Java class for Student complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="User">
+ * &lt;complexType name="Student">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="nickname" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="telephone" type="{http://www.w3.org/2001/XMLSchema}positiveInteger"/>
- *         &lt;element name="Address" type="{http://generate.JD02_09.akhmelev.it.by/}Address"/>
+ *         &lt;element name="address" type="{http://generate.JD02_09.akhmelev.it.by/}Address"/>
  *       &lt;/sequence>
  *       &lt;attribute name="login" use="required" type="{http://generate.JD02_09.akhmelev.it.by/}Login" />
  *       &lt;attribute name="course" default="it.jd.02">
@@ -53,11 +53,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "User", propOrder = {
+@XmlType(name = "Student", propOrder = {
     "name",
     "nickname",
     "telephone",
-    "Address"
+    "address"
 })
 public class Student {
 
@@ -150,7 +150,7 @@ public class Student {
     }
 
     /**
-     * Gets the value of the Address property.
+     * Gets the value of the address property.
      * 
      * @return
      *     possible object is
@@ -162,7 +162,7 @@ public class Student {
     }
 
     /**
-     * Sets the value of the Address property.
+     * Sets the value of the address property.
      * 
      * @param value
      *     allowed object is

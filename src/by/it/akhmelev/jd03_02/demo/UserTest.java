@@ -9,7 +9,7 @@ public class UserTest {
     public static void main(String[] args) {
         User user = new User(0, "login", "pass", "email", 2);
         try {
-            //проверка crud для пользователей
+            //проверка CRUD для пользователей
             UserCRUD userCRUD = new UserCRUD();
 
             //создание

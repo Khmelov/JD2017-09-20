@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="student" type="{http://generate.JD02_09.akhmelev.it.by/}User" maxOccurs="unbounded" minOccurs="2"/>
+ *         &lt;element name="student" type="{http://generate.JD02_09.akhmelev.it.by/}Student" maxOccurs="unbounded" minOccurs="2"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>

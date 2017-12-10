@@ -111,7 +111,7 @@ public class Ad {
         return "Ad{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
-                ", Address='" + address + '\'' +
+                ", address='" + address + '\'' +
                 ", floor=" + floor +
                 ", floors=" + floors +
                 ", area='" + area + '\'' +

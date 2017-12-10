@@ -9,5 +9,5 @@ public interface InterfaceDAO<T> {
     boolean delete(T entity) throws SQLException;
     T read(T entity) throws SQLException;
     List<T> getAll() throws SQLException;
-    List<T> getAll(String WhereAndOreder ) throws SQLException;
+    List<T> getAll(String WhereAndOreder) throws SQLException;
 }

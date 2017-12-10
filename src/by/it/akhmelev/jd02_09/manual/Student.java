@@ -5,14 +5,14 @@ import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-//-------------------- описание отдельного класса User -----------------------------
+//-------------------- описание отдельного класса Student -----------------------------
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)     // FIELD - все поля в XML
-@XmlType(name = "User", propOrder = {  // PROPERTY - только  с геттерами и сеттерами
+@XmlType(name = "Student", propOrder = {  // PROPERTY - только  с геттерами и сеттерами
         "name",                           // PUBLIC_MEMBER - только public
         "nickname",                       // NONE - ни одно
         "telephone",
-        "Address"
+        "address"
 })
 public class Student {
     @XmlAttribute(required = true) //опишем логин как аттрибут
@@ -87,7 +87,7 @@ public class Student {
 
     //-------------------- описание вложенного класса Address -----------------------------
     @XmlRootElement
-    @XmlType(name = " Address ", propOrder = {
+    @XmlType(name = " address ", propOrder = {
             "city",
             "country",
             "street"

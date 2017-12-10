@@ -57,7 +57,7 @@ public class Ad {
     public String toString() {
         return "Ad{" +
                 "description='" + description + '\'' +
-                ", Address='" + address + '\'' +
+                ", address='" + address + '\'' +
                 ", flat=" + flat +
                 ", price=" + price +
                 ", flats=" + flats +
@@ -96,7 +96,7 @@ public class Ad {
     }
 
     /**
-     * Gets the value of the Address property.
+     * Gets the value of the address property.
      * 
      * @return
      *     possible object is
@@ -108,7 +108,7 @@ public class Ad {
     }
 
     /**
-     * Sets the value of the Address property.
+     * Sets the value of the address property.
      * 
      * @param value
      *     allowed object is
