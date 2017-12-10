@@ -33,7 +33,7 @@ public class UniDAO<BeanType> implements IDAO<BeanType> {
         StringBuilder fieldNames = new StringBuilder();
         StringBuilder fieldValues = new StringBuilder();
         String delimiter = "";
-        for (int i = 0; i < fields.length; i++) {
+        for (int i = 1; i < fields.length; i++) {
             Field field = fields[i];
             field.setAccessible(true);
             fieldNames.append(delimiter).append(field.getName());

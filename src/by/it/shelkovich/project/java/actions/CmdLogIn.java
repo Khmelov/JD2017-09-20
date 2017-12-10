@@ -5,7 +5,6 @@ import by.it.shelkovich.project.java.dao.entities.User;
 import by.it.shelkovich.project.java.Hash;
 import by.it.shelkovich.project.java.servlets.RequestUtils;
 import by.it.shelkovich.project.java.servlets.ValidatePatterns;
-import com.sun.org.apache.regexp.internal.RE;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

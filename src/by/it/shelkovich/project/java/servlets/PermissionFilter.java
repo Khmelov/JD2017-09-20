@@ -19,7 +19,7 @@ public class PermissionFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse)servletResponse;
 
 
-        if(request.getParameter("command")!= null && request.getParameter("command").equals("profile")) {
+        if(request.getParameter("command")!= null && ( request.getParameter("command").equals("profile") || request.getParameter("command").equals("publish"))) {
             User user = (User) request.getSession().getAttribute("user");
             if (user == null) response.sendRedirect(request.getContextPath() + "?command=login");
         }

@@ -32,7 +32,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+      <c:if test="${user != null}">
         <li><a href="${pageContext.request.contextPath}/?command=publish">Создать публикацию</a></li>
+      </c:if>
         <li><a href="${pageContext.request.contextPath}/?command=resetDB">Обнулить БД</a></li>
 
       </ul>
