@@ -15,7 +15,7 @@ import java.sql.SQLException;
 
 @WebServlet(name = "FrontController",
         urlPatterns = {
-        "/do","."
+        "/do",""
 })
 public class FrontController extends HttpServlet{
 
