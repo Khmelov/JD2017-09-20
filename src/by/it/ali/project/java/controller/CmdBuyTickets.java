@@ -16,7 +16,7 @@ public class CmdBuyTickets extends AbstractAction {
                     ticket.setCompany(FormValidator.getString(req,"company",Patterns.ANY));
                     ticket.setDate(FormValidator.getString(req,"date",Patterns.DATE));
                     ticket.setPrice(FormValidator.getInt(req,"price"));
-                    ticket.setFKusers(ticket.getId());
+                    ticket.setFKusers(user.getId());
                     DAO dao = DAO.getDAO();
                     dao.ticket.create(ticket);
                     return Actions.INDEX.command;
