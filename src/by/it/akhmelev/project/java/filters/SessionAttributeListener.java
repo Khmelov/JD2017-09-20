@@ -10,12 +10,12 @@ public class SessionAttributeListener implements HttpSessionAttributeListener {
 
         public void attributeAdded(HttpSessionBindingEvent ev) {
             // обработка события
-            System.out.println(String.format("add %s : %s",ev.getName(), ev.getValue()));
+            System.out.println(String.format("attributeAdded %s : %s",ev.getName(), ev.getValue()));
         }
 
         public void attributeReplaced(HttpSessionBindingEvent ev) {
             // обработка события
-            System.out.println(String.format("add %s : %s",ev.getName(), ev.getValue()));
+            System.out.println(String.format("attributeAdded %s : %s",ev.getName(), ev.getValue()));
         }
     }
 /* Аналогично можно подключить другие слушатели.

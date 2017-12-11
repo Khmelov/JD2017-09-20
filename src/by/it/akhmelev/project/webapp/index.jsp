@@ -32,4 +32,5 @@
 <br>
 </c:forEach>
 
+<t:paginator count="100" step="10" urlprefix="?start="/>
 <%@ include file="include/end-html.jsp" %>
