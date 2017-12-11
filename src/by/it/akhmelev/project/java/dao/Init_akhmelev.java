@@ -14,17 +14,17 @@ public class Init_akhmelev {
     static final String PASSWORD_DB = "";
 
 
-    public static void main(String[ ] args) {
+    public static void main(String[] args) {
         try {
             DriverManager.registerDriver(new FabricMySQLDriver());
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        try (Connection connection=
+        try (Connection connection =
                      DriverManager.getConnection
                              (URL_DB, USER_DB, PASSWORD_DB);
-             Statement statement=connection.createStatement()) {
+             Statement statement = connection.createStatement()) {
             //пересоздание базы целиком
             statement.executeUpdate("DROP SCHEMA IF EXISTS `akhmelev` ;");
             statement.executeUpdate("CREATE SCHEMA IF NOT EXISTS `akhmelev` DEFAULT CHARACTER SET utf8 ;");
@@ -82,12 +82,12 @@ public class Init_akhmelev {
             statement.executeUpdate("INSERT INTO `akhmelev`.`roles` (`ID`, `Role`) VALUES (DEFAULT, 'Guest');");
             statement.executeUpdate("INSERT INTO `akhmelev`.`users` (`ID`, `Login`, `Password`, `Email`, `FK_roles`) VALUES (DEFAULT, 'admin', 'padmin', 'admin@it.by', 1);");
             statement.executeUpdate("INSERT INTO `akhmelev`.`users` (`ID`, `Login`, `Password`, `Email`, `FK_roles`) VALUES (DEFAULT, 'user', 'puser', 'user@it.by', 2);");
-            statement.executeUpdate("INSERT INTO `akhmelev`.`ads` (`ID`, `RoomCount`, `Floor`, `Floors`, `Price`, `Area`, `Description`, `Address`, `FK_users`) VALUES (DEFAULT, '2', 4, 5, 55555, 45, 'Хорошая квартира', 'Кнорина 2, кв. 11', 2);");
+            for (int i = 0; i < 15; i++)
+                statement.executeUpdate("INSERT INTO `akhmelev`.`ads` (`ID`, `RoomCount`, `Floor`, `Floors`, `Price`, `Area`, `Description`, `Address`, `FK_users`) VALUES (DEFAULT, '2', 4, 5, 55555, 45, 'Хорошая квартира "+i+"', 'Кнорина 2, кв. "+i+"', 2);");
 
             System.out.println("DB akhmelev. Init complete.");
-        }
-        catch (Exception e){
-            System.err.println("DB akhmelev. Init fail.\n\n"+e.getMessage());
+        } catch (Exception e) {
+            System.err.println("DB akhmelev. Init fail.\n\n" + e.getMessage());
         }
     }
 }

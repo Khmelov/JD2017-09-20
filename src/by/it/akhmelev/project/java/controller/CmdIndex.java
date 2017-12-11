@@ -8,28 +8,25 @@ import java.text.ParseException;
 
 class CmdIndex extends AbstractAction {
 
-    public static void main(String[] args) {
-        try {
-            System.out.println(
-                    DAO.getInstance().ad.getAll("")
-            );
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public ICommand execute(HttpServletRequest req) {
         try {
             int start = 0;
-            if (req.getParameter("start")!=null)
-            try {
-                start = FormValidator.getInt(req, "start");
-            } catch (ParseException e) {
-            }
-            req.setAttribute(
-                    "ads",
-                    DAO.getInstance().ad.getAll(String.format(" LIMIT %s,10",start))
+            int adStep = 10;
+            if (req.getParameter("start") != null)
+                try {
+                    start = FormValidator.getInt(req, "start");
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            DAO dao = DAO.getInstance();
+            //тут лучше сделать другой SQL-вызов,
+            //который сразу вернет число записей.
+            //но потребуется расширение DAO
+            int adCount = dao.ad.getAll("").size();
+            req.setAttribute("adCount", adCount);
+            req.setAttribute("adStep", adStep);
+            req.setAttribute("ads", DAO.getInstance().ad.getAll(String.format(" LIMIT %s,10", start))
             );
         } catch (SQLException e) {
             e.printStackTrace();
