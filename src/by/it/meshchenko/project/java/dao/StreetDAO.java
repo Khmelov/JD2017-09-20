@@ -41,7 +41,7 @@ public class StreetDAO extends AbstractDAO implements IDAO<Street> {
                         "Name = '%s', CityId = %d WHERE Id = %d",
                 item.getName(),
                 item.getCityId(),
-                item.getCityId()
+                item.getId()
         );
         return executeUpdate(sql);
     }

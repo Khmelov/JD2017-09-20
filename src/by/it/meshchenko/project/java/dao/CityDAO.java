@@ -25,10 +25,10 @@ public class CityDAO extends AbstractDAO implements IDAO<City> {
     public boolean create(City item) {
         String sql = String.format(
                 "INSERT INTO addr_cities(" +
-                        "Name,CounrtyId)" +
+                        "Name,CountryId)" +
                         " VALUES('%s',%d);",
                 item.getName(),
-                item.getCounrtyId()
+                item.getCountryId()
         );
         item.setId(executeCreate(sql));
         return (item.getId()>0);
@@ -38,9 +38,9 @@ public class CityDAO extends AbstractDAO implements IDAO<City> {
     public boolean update(City item) {
         String sql = String.format(
                 "UPDATE addr_cities SET " +
-                        "Name = '%s', CounrtyId = %d WHERE Id = %d",
+                        "Name = '%s', CountryId = %d WHERE Id = %d",
                 item.getName(),
-                item.getCounrtyId(),
+                item.getCountryId(),
                 item.getId()
         );
         return executeUpdate(sql);
@@ -66,7 +66,7 @@ public class CityDAO extends AbstractDAO implements IDAO<City> {
 
                 item.setId(rs.getInt("Id"));
                 item.setName(rs.getString("Name"));
-                item.setCounrtyId(rs.getInt("CounrtyId"));
+                item.setCountryId(rs.getInt("CountryId"));
 
                 items.add(item);
             }

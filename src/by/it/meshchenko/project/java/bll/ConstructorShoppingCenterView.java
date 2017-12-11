@@ -16,7 +16,7 @@ public class ConstructorShoppingCenterView {
         Address addr = dao.address.read(sh.getAddressId());
         Street street = dao.street.read(addr.getStreetId());
         City city = dao.city.read(street.getCityId());
-        Country country = dao.country.read(city.getCounrtyId());
+        Country country = dao.country.read(city.getCountryId());
         String addrName = country.getName() + ", " + city.getName() + ", " +
                 street.getName() + "," + addr.getBuildingNumberStr();
 
