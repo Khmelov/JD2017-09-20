@@ -10,7 +10,7 @@ public abstract class Var implements IOperation, IVariable {
         //представим карту в нужном String-формате в анонимном классе
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            for (Map.Entry pair : vars.entrySet()) {
+            for (Entry pair : vars.entrySet()) {
                 sb.append(
                         String.format("%s=%s\n",
                                 pair.getKey(),
