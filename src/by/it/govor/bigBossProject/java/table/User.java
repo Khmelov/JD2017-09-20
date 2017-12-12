@@ -40,12 +40,12 @@ public class User {  private int id;
         return role_ID;
     }
 
-    public User(int id, String name, String nick, String login, String password, int telephone, int role_ID) {
+    public User(int id, String login, String password , String name, String  nick, int telephone, int role_ID) {
         this.id = id;
-        this.name = name;
-        this.nick = nick;
         this.login = login;
         this.password = password;
+        this.name = name;
+        this.nick = nick;
         this.telephone = telephone;
         this.role_ID = role_ID;
     }

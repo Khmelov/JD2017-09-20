@@ -2,6 +2,10 @@ package by.it.govor.bigBossProject.java.controller;
 
 
 enum Actions {
+    EditUSERS{
+        {
+        this.command = new CmdEditUsers();}
+    },
 
     LOGIN {
         {
@@ -26,6 +30,11 @@ enum Actions {
     EDITUSERS {
         {
             this.command = new CmdEditUsers();
+        }
+    },
+    INDEX {
+        {
+            this.command = new CmdIndex();
         }
     },
     CREATEAD{

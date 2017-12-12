@@ -21,13 +21,16 @@ class CmdLogout extends AbstractAction {
         if (user==null) return Actions.LOGIN.command;
 
         try {
-            DAO dao=DAO.getInstanceAd();
-            List<Ad> ads=dao.ad.getRead(" where FK_Users="+user.getId());
+            DAO dao=DAO.getInstance();
+            List<Ad> ads=dao.ad.getRead(" where user_ID="+user.getId());
             req.setAttribute("ads",ads);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
+
+
+
 
 }

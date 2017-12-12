@@ -50,19 +50,18 @@
                              <div class="col-md-4">
                                  <input id="Telephone" name="Telephone" type="int"
                                         placeholder="" class="form-control input-md" required=""
-                                        value=3754477>
+                                        value=375447771060>
                              </div>
                          </div>
 
            <!-- Select Basic -->
                      <div class="form-group">
-                       <label class="col-md-4 control-label" for="Floors">Country</label>
+                       <label class="col-md-4 control-label" for="LabelCountry">Country</label>
                       <div class="col-md-4">
-                       <select id="Floors" name="Floors" class="form-control">
-                        <option value="1">Belarus</option>
-                        <option value="2">Russia</option>
-                           <option value="3">Ukraine</option>
-                           <option selected value="5">Belarus</option>
+                       <select id="country" name="country" class="form-control">
+                        <option value="Russia">Russia</option>
+                           <option value="Ukraine">Ukraine</option>
+                           <option selected value="Belarus">Belarus</option>
                       </select>
                         </div>
                      </div>
@@ -70,13 +69,12 @@
 
             <!-- Select Basic -->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="Floors">City</label>
+              <label class="col-md-4 control-label" for="LableCity">City</label>
              <div class="col-md-4">
-              <select id="Floors" name="Floors" class="form-control">
-               <option value="1">Minsk</option>
-               <option value="2">Moscow</option>
-                  <option value="3">Kiev</option>
-                  <option selected value="5">Minsk</option>
+              <select id="city" name="city" class="form-control">
+               <option value="Moscow">Moscow</option>
+                  <option value="Kiev">Kiev</option>
+                  <option selected value="Minsk">Minsk</option>
              </select>
                </div>
             </div>
@@ -98,7 +96,7 @@
 
 <!-- Text input-->
 
-<p>message=${message}</p>
+
 
 
 

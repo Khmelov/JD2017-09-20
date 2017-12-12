@@ -17,15 +17,16 @@ class CmdCreateAd extends AbstractAction {
         if (FormValidator.isPost(req)){
             Ad ad=new Ad();
             try {
-                ad.setProcessor(FormValidator.getString(req,"Processor",Patterns.ANY));
-                ad.setVideo_card(FormValidator.getString(req,"Video card",Patterns.ANY));
-                ad.setMotherboard(FormValidator.getString(req,"Motherboard", Patterns.ANY));
-                ad.setRam(FormValidator.getString(req,"Price",Patterns.ANY));
-                ad.setPower_supply(FormValidator.getString(req,"Floor",Patterns.ANY));
+                ad.setProcessor(FormValidator.getString(req,"processor",Patterns.PROCESSOR));
+                ad.setVideo_card(FormValidator.getString(req,"video_card",Patterns.VIDEO));
+                ad.setMotherboard(FormValidator.getString(req,"motherboard", Patterns.MATHERBOARD));
+                ad.setRam(FormValidator.getString(req,"ram",Patterns.RAM));
+                ad.setPower_supply(FormValidator.getString(req,"power_supply",Patterns.POWER));
+                ad.setHDD(FormValidator.getString(req,"HDD",Patterns.HDD));
                 ad.setUser_ID(user.getId());
-                DAO dao= DAO.getInstanceAd();
+                DAO dao= DAO.getInstance();
                 dao.ad.create(ad);
-                return Actions.CREATEAD.command;
+                return Actions.LOGOUT.command;
             } catch (Exception e) {
                 e.printStackTrace();
             }
