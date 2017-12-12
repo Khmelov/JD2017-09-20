@@ -34,30 +34,28 @@ class Utils {
         return null;
     }
 
-    /**
-     * @see <a href=http://www.codejava.net/java-ee/servlet/java-file-upload-example-with-servlet-30-api>
-     * http://www.codejava.net/java-ee/servlet/java-file-upload-example-with-servlet-30-api
-     * </a>
-     */
     static String uploadFile(HttpServletRequest request, String FieldName) {
         //полный путь к приложению
         String appPath = request.getServletContext().getRealPath("");
         //путь к каталогу файлов с загрузкой
         String savePath = appPath + File.separator + SAVE_DIR;
 
+        //ВАЖНО! Настройте <multipart-config> в web.xml (или аннотациями в сервлете)
         //поиск имени файла в поле FieldName и запись при успехе
         String fileName = "no_img.jpg";
         try {
             for (Part part : request.getParts()) {
                 if (part.getName().equals(FieldName)) {
-                    fileName = extractFileName(part);
-                    part.write(savePath + File.separator + fileName);
+                    String fn = extractFileName(part);
+                    if (fn!=null){
+                        fileName=fn;
+                        part.write(savePath + File.separator + fileName);
+                    }
                 }
             }
         } catch (IOException | ServletException e) {
             e.printStackTrace();
         }
-        request.setAttribute(Messages.MESSAGE, "Upload successful" + fileName);
         return SAVE_DIR + '/' + fileName;
     }
 }
