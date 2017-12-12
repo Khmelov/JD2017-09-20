@@ -19,6 +19,8 @@ class CmdIndex extends AbstractAction {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+            req.setAttribute("adCount", 0);
+            req.setAttribute("adStep", adStep);
             DAO dao = DAO.getInstance();
             //тут лучше сделать другой SQL-вызов,
             //который сразу вернет число записей.
@@ -28,7 +30,7 @@ class CmdIndex extends AbstractAction {
             req.setAttribute("adStep", adStep);
             req.setAttribute("ads", DAO.getInstance().ad.getAll(String.format(" LIMIT %s,10", start))
             );
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;

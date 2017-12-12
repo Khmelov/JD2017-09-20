@@ -1,7 +1,11 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 
-<form class="form-horizontal" action="do?command=CREATEAD" method="POST">
+<form class="form-horizontal"
+      action="do?command=CREATEAD"
+      method="POST"
+      enctype="multipart/form-data"
+>
 <fieldset>
 
 <!-- Form Name -->
@@ -132,6 +136,15 @@
   <span class="help-block">Укажите цену у.е.</span>
   </div>
 </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="Image">Изображение</label>
+    <div class="col-md-4">
+      <input id="Image" name="Image" type="file" placeholder="" value="60" class="form-control input-md" required="">
+      <span class="help-block">Загрузите изображение</span>
+    </div>
+  </div>
 
 <!-- Button -->
 <div class="form-group">

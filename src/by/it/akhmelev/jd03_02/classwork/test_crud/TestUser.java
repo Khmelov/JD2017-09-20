@@ -20,9 +20,5 @@ public class TestUser {
             System.out.println("UPDATE: "+user);
         if (userCRUD.delete(user))
             System.out.println("DELETE: "+user);
-
-
     }
 }
-               "INSERT INTO `users`(`Login`, `Password`, `Email`, `FK_roles`) " +
-                       "VALUES ('%s','%s','%s',%d);",

@@ -21,7 +21,7 @@ public class ConnectionCreator {
         }
     }
 
-    public static Connection getConnectionOld() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed())
             connection = DriverManager.getConnection(
                     "jdbc:mysql://127.0.0.1:2016/akhmelev?useUnicode=true&characterEncoding=UTF-8",
@@ -31,7 +31,7 @@ public class ConnectionCreator {
         return connection;
     }
 
-    public static Connection getConnection() {
+    public static Connection getConnectionPool() {
         try {
             InitialContext ic = new InitialContext();
             DataSource ds = (DataSource) ic.lookup("java:/comp/env/jdbc/my_sql_akhmelev");

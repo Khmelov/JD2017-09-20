@@ -24,6 +24,9 @@ class CmdCreateAd extends AbstractAction {
                 ad.setFloors(FormValidator.getInt(req,"Floors"));
                 ad.setRoomCount(FormValidator.getInt(req,"RoomCount"));
                 ad.setFK_Users(user.getId());
+
+                req.getSession().setAttribute(Messages.MESSAGE,Utils.uploadFile(req,"Image"));
+
                 DAO dao= DAO.getInstance();
                 dao.ad.create(ad);
                 return Actions.INDEX.command;

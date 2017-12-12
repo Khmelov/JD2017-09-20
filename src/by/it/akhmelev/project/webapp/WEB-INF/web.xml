@@ -8,13 +8,17 @@
     <servlet>
         <servlet-name>FrontControllerServlet</servlet-name>
         <servlet-class>by.it.akhmelev.project.java.controller.FrontController</servlet-class>
+        <multipart-config>
+            <max-file-size>10000000</max-file-size>
+            <max-request-size>50000000</max-request-size>
+            <file-size-threshold>2000000</file-size-threshold>
+        </multipart-config>
     </servlet>
     <servlet-mapping>
         <servlet-name>FrontControllerServlet</servlet-name>
         <url-pattern>/do</url-pattern>
         <url-pattern></url-pattern>
     </servlet-mapping>
-
 
     <filter>
         <filter-name>EncodingPage</filter-name>
