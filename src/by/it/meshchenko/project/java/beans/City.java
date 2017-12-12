@@ -4,14 +4,14 @@ public class City {
 
     private int id;
     private String name;
-    private int counrtyId;
+    private int countryId;
 
     public City() {}
 
-    public City(int id, String name, int counrtyId) {
+    public City(int id, String name, int countryId) {
         this.id = id;
         this.name = name;
-        this.counrtyId = counrtyId;
+        this.countryId = countryId;
     }
 
     public int getId() {
@@ -30,12 +30,12 @@ public class City {
         this.name = name;
     }
 
-    public int getCounrtyId() {
-        return counrtyId;
+    public int getCountryId() {
+        return countryId;
     }
 
-    public void setCounrtyId(int counrtyId) {
-        this.counrtyId = counrtyId;
+    public void setCountryId(int countryId) {
+        this.countryId = countryId;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class City {
         City city = (City) o;
 
         if (id != city.id) return false;
-        if (counrtyId != city.counrtyId) return false;
+        if (countryId != city.countryId) return false;
         return name.equals(city.name);
     }
 
@@ -54,7 +54,7 @@ public class City {
     public int hashCode() {
         int result = id;
         result = 31 * result + name.hashCode();
-        result = 31 * result + counrtyId;
+        result = 31 * result + countryId;
         return result;
     }
 
@@ -63,7 +63,7 @@ public class City {
         return "City{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", counrtyId=" + counrtyId +
+                ", countryId=" + countryId +
                 "}\n";
     }
 }

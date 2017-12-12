@@ -3,7 +3,7 @@ package by.it.meshchenko.project.java.beans;
 import java.sql.Date;
 
 public class LeaseRoom {
-//java.util.Date newDate = result.getTimestamp("VALUEDATE");
+
     private int id;
     private Float price;
     private Date dateStartLease;

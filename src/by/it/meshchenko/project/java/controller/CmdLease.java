@@ -53,21 +53,4 @@ public class CmdLease extends AbstractAction {
         }
         return null;
     }
-
-//    public static void main(String[] args){
-//        DAO dao = DAO.getInstance();
-//        List<ShoppingCenter> temp = dao.shoppingCenter
-//                .getAll("");
-//        for(ShoppingCenter sh : temp){
-//
-//
-//            int count = dao.room.getAll("WHERE ShoppingCenterId="+ sh.getId()).size();
-//            int idAddr = dao.address.read(sh.getAddressId()).getStreetId();
-//            System.out.println(idAddr);
-//            int idStreet = dao.street.read(idAddr).getId();
-//            System.out.println(idAddr+ "-" + idStreet);
-//            String city = dao.city.read(idStreet).getName();
-//            System.out.println(idAddr+ "-" + idStreet  +"-" + city);
-//        }
-//    }
 }

@@ -3,10 +3,7 @@ package by.it.meshchenko.project.java.dao;
 import by.it.meshchenko.project.java.beans.LeaseRoom;
 import by.it.meshchenko.project.java.connection.ConnectionCreator;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,12 +47,13 @@ public class LeaseRoomDAO extends AbstractDAO implements IDAO<LeaseRoom> {
                 item.getPrice() == null ? "" : "Price=\'" + item.getPrice().toString() + "\',",
                 item.getDateStartLease() == null ? "" : "DateStartLease=\'"
                         + item.getDateStartLease().toString() + "\',",
-                item.getDateStartLease() == null ? "" : "DateStopLease=\'"
+                item.getDateStopLease() == null ? "" : "DateStopLease=\'"
                         + item.getDateStopLease().toString() + "\',",
                 item.getRoomId(),
                 item.getUserId(),
                 item.getId()
         );
+        System.out.println(sql);
         return executeUpdate(sql);
     }
 

@@ -86,12 +86,12 @@ public class DB {
                     String.format("CREATE TABLE IF NOT EXISTS `meshchenko`.`addr_cities` (\n" +
                             "  `Id` INT(11) NOT NULL AUTO_INCREMENT,\n" +
                             "  `Name` VARCHAR(255) NOT NULL,\n" +
-                            "  `CounrtyId` INT(11) NOT NULL,\n" +
+                            "  `CountryId` INT(11) NOT NULL,\n" +
                             "  PRIMARY KEY (`Id`),\n" +
-                            "  UNIQUE INDEX `Name_CountryId_UNIQUE` (`Name` ASC, `CounrtyId` ASC),\n" +
-                            "  INDEX `FK_Countries_Cities_idx` (`CounrtyId` ASC),\n" +
+                            "  UNIQUE INDEX `Name_CountryId_UNIQUE` (`Name` ASC, `CountryId` ASC),\n" +
+                            "  INDEX `FK_Countries_Cities_idx` (`CountryId` ASC),\n" +
                             "  CONSTRAINT `FK_Countries_Cities`\n" +
-                            "    FOREIGN KEY (`CounrtyId`)\n" +
+                            "    FOREIGN KEY (`CountryId`)\n" +
                             "    REFERENCES `meshchenko`.`addr_countries` (`Id`))\n" +
                             "ENGINE = InnoDB\n" +
                             "DEFAULT CHARACTER SET = utf8;")
@@ -233,7 +233,7 @@ public class DB {
         dao.user.create(user);
 
         User userManager = new User(0,"Manager","123456789","+375295303445",
-                "manager@manager.com",false, roleManager.getId());
+                "manager@mail.com",false, roleManager.getId());
         dao.user.create(userManager);
 
         user = new User(0,"user1","123456789",null,

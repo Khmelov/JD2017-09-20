@@ -38,7 +38,7 @@
 		    <p class="text-info">В форме введены данные зарегистрированного email, role='admin'<br />
 		        Введите email:admin1@admin.com --> Message: 'Account is not registered' <br />
 		        Введите email:admin@admin.com, password:1234567 --> Message: 'Incorrect password' <br />
-		        Введите email:manager@manager.com, password:123456789 --> зарегистрированный email, role='manager' <br />
+		        Введите email:manager@mail.com, password:123456789 --> зарегистрированный email, role='manager' <br />
 		        Введите email:user1@gmail.com, password:123456789 --> зарегистрированный email, role='user' <br />
 		    </p>
 	</div>
