@@ -29,7 +29,7 @@ class CmdEditUsers extends AbstractAction {
                         dao.user.update(user);
                     if (req.getParameter("Delete") != null){
 
-                    Ad ad= new Ad();
+
                     List<Ad> ads = dao.ad.getRead("");
                     for (Ad a:ads) {
                         if (a.getUser_ID()==user.getId()){

@@ -32,6 +32,11 @@ enum Actions {
             this.command = new CmdEditUsers();
         }
     },
+    INDEX {
+        {
+            this.command = new CmdIndex();
+        }
+    },
     CREATEAD{
         {
             this.command = new CmdCreateAd();

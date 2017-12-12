@@ -50,7 +50,7 @@
                              <div class="col-md-4">
                                  <input id="Telephone" name="Telephone" type="int"
                                         placeholder="" class="form-control input-md" required=""
-                                        value=3754477>
+                                        value=375447771060>
                              </div>
                          </div>
 
@@ -59,7 +59,6 @@
                        <label class="col-md-4 control-label" for="LabelCountry">Country</label>
                       <div class="col-md-4">
                        <select id="country" name="country" class="form-control">
-                        <option value="Belarus">Belarus</option>
                         <option value="Russia">Russia</option>
                            <option value="Ukraine">Ukraine</option>
                            <option selected value="Belarus">Belarus</option>
@@ -73,7 +72,6 @@
               <label class="col-md-4 control-label" for="LableCity">City</label>
              <div class="col-md-4">
               <select id="city" name="city" class="form-control">
-               <option value="Minsk">Minsk</option>
                <option value="Moscow">Moscow</option>
                   <option value="Kiev">Kiev</option>
                   <option selected value="Minsk">Minsk</option>

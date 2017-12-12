@@ -31,8 +31,7 @@
       <option value="MSI GeForce GTX 1060 Gaming X 6GB GDDR5">MSI GeForce GTX 1060 Gaming X 6GB GDDR5</option>
       <option value="Palit GeForce GTX 1050 Ti Dual OC 4GB GDDR5">Palit GeForce GTX 1050 Ti Dual OC 4GB GDDR5 </option>
       <option value="Gigabyte GeForce GTX 1070 Ti Gaming 8GB GDDR5">Gigabyte GeForce GTX 1070 Ti Gaming 8GB GDDR5</option>
-      <option value="Gigabyte AORUS GeForce GTX 1080 Ti 11GB GDDR5X">Gigabyte AORUS GeForce GTX 1080 Ti 11GB GDDR5X</option>
-      <option selected value="Intel Core i5-8400">Intel Core i5-8400</option>
+      <option selected value="Gigabyte AORUS GeForce GTX 1080 Ti 11GB GDDR5X">Gigabyte AORUS GeForce GTX 1080 Ti 11GB GDDR5X</option>
     </select>
   </div>
 </div>
@@ -43,7 +42,6 @@
   <label class="col-md-4 control-label" for="motherboard">Материнская плата</label>
   <div class="col-md-5">
     <select id="motherboard" name="motherboard" class="form-control">
-      <option value="ASRock Z370 Pro4">ASRock Z370 Pro4</option>
       <option value="ASUS ROG Strix B350-F Gaming">ASUS ROG Strix B350-F Gaming </option>
       <option value="ASUS Prime Z370-A">ASUS Prime Z370-A</option>
       <option value="ASRock B250M-HDV">ASRock B250M-HDV</option>
@@ -57,7 +55,6 @@
   <label class="col-md-4 control-label" for="ram">ОЗУ</label>
   <div class="col-md-5">
     <select id="ram" name="ram" class="form-control">
-      <option value="Kingston HyperX FURY 8GB DDR4">Kingston HyperX FURY 8GB DDR4</option>
       <option value="Kingston HyperX FURY 16GB DDR4 PC4-19200">Kingston HyperX FURY 16GB DDR4 PC4-19200</option>
       <option value="Corsair Vengeance LED 2x16GB DDR4 PC4-24000">Corsair Vengeance LED 2x16GB DDR4 PC4-24000 </option>
       <option value="Corsair Vengeance 4x16GB DDR4-SODIMM PC4-19200">Corsair Vengeance 4x16GB DDR4-SODIMM PC4-19200 </option>
@@ -71,8 +68,7 @@
   <label class="col-md-4 control-label" for="power_supply">Блок питания</label>
   <div class="col-md-5">
     <select id="power_supply" name="power_supply" class="form-control">
-      <option value="AeroCool Kcas 500W">AeroCool Kcas 500W</option>
-      <option value="AeroCool Kcas 600W">AeroCool Kcas 600W</option>
+            <option value="AeroCool Kcas 600W">AeroCool Kcas 600W</option>
       <option value="AeroCool Kcas 700W">AeroCool Kcas 700W</option>
       <option value="AeroCool Kcas 1200W">AeroCool Kcas 1200W</option>
       <option selected value="AeroCool Kcas 500W">AeroCool Kcas 500W</option>
@@ -88,8 +84,7 @@
       <option value="1 Тб 5400об/мин"> 1 Тб 5400об/мин</option>
       <option value="2 Тб 7200об/мин">2 Тб 7200об/мин</option>
       <option value="3 Тб 7200об/мин">3 Тб 7200об/мин</option>
-      <option value="512гб 5400об/мин">512гб 5400об/мин</option>
-      <option selected value="512гб 5400об/мин">512гб 5400об/мин</option>
+      <option selected value="512гб 5400об/мин">512 гб 5400об/мин</option>
     </select>
   </div>
 </div>

@@ -27,13 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="do?command=ResetDB">ResetDB</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="do?command=CreateAd">CreateAd</a>
                 </li>
                 <li class="nav-item">
-                     <a class="nav-link" href="do?command=EditUsers">Active</a>
+                     <a class="nav-link" href="do?command=EditUsers">Users</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="http://localhost:2080/phpmyadmin/">PHP MyAdmin</a>
