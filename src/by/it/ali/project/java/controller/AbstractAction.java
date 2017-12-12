@@ -3,7 +3,7 @@ package by.it.ali.project.java.controller;
 abstract class AbstractAction implements ICommand {
      @Override
      public String getJsp() {
-         return "/" + this.toString().toLowerCase() + ".jsp";
+         return this.toString().toLowerCase() + ".jsp";
      }
 
      @Override
