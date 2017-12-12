@@ -5,7 +5,6 @@ import by.it.meshchenko.project.java.controller.*;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class AuthenticationFilter implements Filter {
@@ -25,22 +24,6 @@ static int i = 0;
      * Метод фильтрации
      * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
      */
-//    public static void main(String[] args){
-//
-//        String uri = "calhost:28080/meshchenko/do";
-//        String query1 = "command=signin";
-//        String query2 = "command=signin";
-//        //String page1 = uri.substring(uri.lastIndexOf("/")+1, uri.length());
-//
-//        String url1 = uri + (query1 == null ? "" : "?" + query1);
-//        String url2 = uri + (query2 == null ? "" : "?" + query2);
-//        String page1 = url1.substring(url1.lastIndexOf("/")+1, url1.length());
-//        page1 = page1.substring(0, (page1.indexOf("&") == -1 ? page1.length() : page1.indexOf("&")));
-//        String page2 = url2.substring(url2.lastIndexOf("/")+1, url2.length());
-//        page2 = page2.substring(0, (page1.indexOf("&") == -1 ? page1.length() : page1.indexOf("&")));
-//        System.out.println(page1);
-//        System.out.println(page2);
-//    }
     @Override
     public void doFilter(ServletRequest request, ServletResponse response,
                          FilterChain filterChain) throws IOException, ServletException

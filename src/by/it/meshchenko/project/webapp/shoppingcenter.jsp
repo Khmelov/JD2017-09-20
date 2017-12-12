@@ -4,6 +4,7 @@
         <p><c:out value="${shoppingCenterView.shoppingCenter.name}" /><br />
             <c:out value="${shoppingCenterView.address}" />
         </p>
+        <p><c:out value="${shoppingCenterView.shoppingCenter.description}" /></p>
         <p>
             <table class="table table-hover">
                 <tr>

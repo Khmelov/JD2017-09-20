@@ -23,7 +23,7 @@ public class Pages {
     public static final String adm_countries = "/adminpages/admcountries.jsp";
     public static final String adm_streets = "/adminpages/admstreets.jsp";
     public static final String adm_users = "/adminpages/admusers.jsp";
-    public static final String manag_rooms = "/managrooms.jsp";
+    public static final String manag_rooms = "/managerpages/managrooms.jsp";
 
     public static final String cmdindex = "do?command=index";
     public static final String cmdsignin = "do?command=signin";
@@ -62,6 +62,8 @@ public class Pages {
 
     public final static List<String> AUTHENTICATION = new ArrayList<String>(
             Arrays.asList(
+                    index,
+                    cmdindex,
                     cmdlease,
                     cmdsignout,
                     cmdmanagerpage,

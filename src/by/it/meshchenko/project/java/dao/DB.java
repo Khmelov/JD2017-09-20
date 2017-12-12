@@ -316,10 +316,4 @@ public class DB {
                 userManager.getId()));
 
     }
-
-    public static void main(String[] args) throws SQLException{
-        delete();
-        init();
-       addData();
-    }
 }

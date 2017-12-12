@@ -1,7 +1,5 @@
 package by.it.meshchenko.project.java.bll.Admin;
 
-import by.it.meshchenko.project.java.beans.City;
-import by.it.meshchenko.project.java.beans.Country;
 import by.it.meshchenko.project.java.beans.Street;
 import by.it.meshchenko.project.java.beans.View.Admin.AdmCitiesView;
 import by.it.meshchenko.project.java.beans.View.Admin.AdmStreetsView;

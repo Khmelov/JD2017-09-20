@@ -22,7 +22,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-            <a class="navbar-brand" href="">Lease rooms in shopping centers</a>
+            <a class="navbar-brand" href="do?command=index">Lease rooms in shopping centers</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
