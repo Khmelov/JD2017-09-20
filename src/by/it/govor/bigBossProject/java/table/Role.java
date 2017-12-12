@@ -5,6 +5,10 @@ public class Role {
     private int id;
     private String role;
 
+    public Role() {
+
+    }
+
     @Override
     public String toString() {
         return "Role{" +

@@ -20,20 +20,18 @@ class CmdSignup extends AbstractAction {
             user.setNick(FormValidator.getString(req, "nick", Patterns.NICK));
             user.setTelephone(FormValidator.getInt(req, "Telephone"));
             user.setRole_ID(1);
-            DAO daoUser = DAO.getInstanceUser();
-            if (daoUser.user.getRead("where Login='"+user.getLogin()+"'").size()>0)
+            address.setUser_ID(user.getId());
+            DAO dao = DAO.getInstance();
+            if (dao.user.getRead("where Login='"+user.getLogin()+"'").size()>0)
             {
                 req.setAttribute(Messages.ERROR, "This user already exists");
                 return null;
             }
-            daoUser.user.create(user);
-
-
-            address.setCountry(FormValidator.getString(req,"country",Patterns.ADDRESS));
-            address.setCountry(FormValidator.getString(req,"city",Patterns.ADDRESS));
+            dao.user.create(user);
+            address.setCountry(FormValidator.getString(req,"country",Patterns.COUNTRY));
+            address.setCity(FormValidator.getString(req,"city",Patterns.CITY));
             address.setUser_ID(user.getId());
-            DAO daoAddress = DAO.getInstanceAddress();
-            daoAddress.address.create(address);
+            dao.address.create(address);
 
             req.setAttribute(Messages.MESSAGE, "finish");
             return Actions.LOGIN.command;

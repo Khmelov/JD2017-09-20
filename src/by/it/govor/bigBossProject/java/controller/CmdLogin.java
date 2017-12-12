@@ -16,7 +16,7 @@ class CmdLogin extends AbstractAction {
             try {
                 user.setLogin(FormValidator.getString(req, "login", Patterns.LOGIN));
                 user.setPassword(FormValidator.getString(req, "password", Patterns.PASSWORD));
-                DAO dao= DAO.getInstanceUser();
+                DAO dao= DAO.getInstance();
                 List<User> users=dao.user.getRead(
                         String.format(" WHERE login='%s' AND password='%s'",
                                 user.getLogin(),
