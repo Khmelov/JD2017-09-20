@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rolesJ>
+    <roles>
+        <id>3</id>
+        <role>Moderator</role>
+    </roles>
+    <roles>
+        <id>4</id>
+        <role>User</role>
+    </roles>
+</rolesJ>
