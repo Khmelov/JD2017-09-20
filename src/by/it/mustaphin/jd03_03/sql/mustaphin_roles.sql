@@ -1,8 +1,0 @@
-CREATE DATABASE  IF NOT EXISTS `mustaphin` DEFAULT CHARACTER SET utf8;
-USE `mustaphin`;
-DROP TABLE IF EXISTS `roles`;
-CREATE TABLE `roles` (
-  `id_role` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_role`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;

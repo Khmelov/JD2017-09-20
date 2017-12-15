@@ -1,4 +1,0 @@
-msg.welcome=Welcome
-msg.name=Marat
-msg.howdoyoudo=How do you do?
-msg.test=one \n two + =

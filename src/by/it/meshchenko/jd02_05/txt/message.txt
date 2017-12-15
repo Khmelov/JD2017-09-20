@@ -1,4 +1,0 @@
-msg.welcom=Welcom
-msg.name=Oleg Meshchenko
-msg.howdoyoudo=How do you do?
-msg.test=one \n two + =

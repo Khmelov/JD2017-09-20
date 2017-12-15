@@ -1,4 +1,0 @@
-msg.welcome=Привет
-msg.name=Антон Шелкович
-msg.whatalonelyday=Какой чудесный день!
-msg.nextline=Пожалуйста, введите следующую команду

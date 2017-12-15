@@ -1,4 +1,0 @@
-msg.welcome=Welcome
-msg.name=Anton Shelkovich
-msg.whatalonelyday=What a lonely day!
-msg.nextline=Please, enter command

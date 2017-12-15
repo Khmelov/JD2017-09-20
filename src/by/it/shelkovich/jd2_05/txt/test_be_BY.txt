@@ -1,4 +1,0 @@
-msg.welcome=Прывiтанне
-msg.name=Антон Шаўкович
-msg.whatalonelyday=Якi цудны дзень!
-msg.nextline=Калi ласка, увядзіце наступную каманду

@@ -1,4 +1,0 @@
-msg.welcome=Привет
-msg.name=Сергей Шишов
-msg.howdoyoudo=Как дела?
-msg.test=Тест

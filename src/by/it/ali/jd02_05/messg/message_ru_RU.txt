@@ -1,3 +1,0 @@
-msg.welcome = Приветствую
-msg.name = Аббас Али
-msg.hru = Как дела?

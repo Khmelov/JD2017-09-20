@@ -1,3 +1,0 @@
-txt.Hello= прывітанне
-txt.Bad = дрэнна
-txt.Good= добра

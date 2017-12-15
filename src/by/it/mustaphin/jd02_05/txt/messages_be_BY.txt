@@ -1,4 +1,0 @@
-msg.welcome=Прывет
-msg.name=Марат
-msg.howdoyoudo=Як справы?
-msg.test=адзiн \n два + =

@@ -1,5 +1,0 @@
-msg.welcom=Вітаю
-msg.name=Сяргей
-msg.howdoyoudo=Як справы?
-msg.test= адзін \n два + =
-msg.command=Увядзіце "ru", "be", "en" або "exit" >

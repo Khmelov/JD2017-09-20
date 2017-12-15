@@ -1,4 +1,0 @@
-msg.welcome = Hello!
-msg.name = Vitaly
-msg.howdoyoudo = How do you do?
-msg.test = one \n two

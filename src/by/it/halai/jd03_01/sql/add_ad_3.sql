@@ -1,2 +1,0 @@
-INSERT INTO `ads`(`ID`, `Name`, `Genre`, `Number_Of_Players`, `Price`, `Description`, `FK_Users`)
- VALUES ('3','Fairy tales of the Schwarzwald','game based on Warhammer','1500','15','more blood for the god of blood! Or...For the emperor','2');

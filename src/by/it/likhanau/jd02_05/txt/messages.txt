@@ -1,4 +1,0 @@
-msg.welcome=Welcome!
-msg.name=Vitali Likhanau.
-msg.nicetomeetyou=Nice to meet you!
-

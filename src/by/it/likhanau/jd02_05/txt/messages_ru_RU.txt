@@ -1,3 +1,0 @@
-msg.welcome=Привет!
-msg.name=Лиханов Виталий.
-msg.nicetomeetyou=Приятно познакомиться!

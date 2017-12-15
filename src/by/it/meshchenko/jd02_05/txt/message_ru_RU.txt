@@ -1,4 +1,0 @@
-msg.welcom=Здравствуйте
-msg.name=Олег Мещенко
-msg.howdoyoudo=Как дела?
-msg.test=один \n два + =

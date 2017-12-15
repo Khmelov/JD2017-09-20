@@ -1,4 +1,0 @@
-msg.welcome=Welcome
-msg.name=Sergei Shishov
-msg.howdoyoudo=How do you?
-msg.test=one \n =
